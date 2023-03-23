@@ -27,7 +27,7 @@ import Foundation
         let image: String?
         let name, description: String?
         let images: [String]?
-        let inFavorites, inCart: Bool?
+        let in_favorites, in_cart: Bool?
     }
     
     

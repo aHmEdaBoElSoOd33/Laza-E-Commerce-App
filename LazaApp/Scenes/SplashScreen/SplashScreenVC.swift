@@ -21,7 +21,7 @@ class SplashScreenVC: UIViewController {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2 ){
             
-            if UserDefaults.standard.string(forKey: "userToken") == ""{
+            if UserDefaults.standard.string(forKey: "userToken") == nil{
                 
                 let vc = self.storyboard?.instantiateViewController(withIdentifier: OnboardingVC.ID) as! OnboardingVC
                 
