@@ -144,4 +144,13 @@ extension WishlistVC : UICollectionViewDelegate , UICollectionViewDataSource,UIC
         return CGSize(width: collectionView.bounds.width / 2 - 15, height: 260)
     }
     
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: ProductDetailVC.ID) as! ProductDetailVC
+        vc.id = wishlistArray[indexPath.row].product?.id
+        vc.modalTransitionStyle = .crossDissolve
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
+    }
+    
 }

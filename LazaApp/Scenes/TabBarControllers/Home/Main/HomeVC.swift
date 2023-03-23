@@ -52,18 +52,17 @@ class HomeVC: UIViewController {
 //        } else {
 //            print("User is logged out")
 //        }
+          
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
         setupUI()
         fetchNewArraivalDataFromApi()
         fetchCategorisDataFromApi()
         profileApi.delegate = self
         wishlistApi.delegate = self
         profileApi.getUserProfileData()
-          
-    }
-    
-    
-    override func viewWillAppear(_ animated: Bool) {
-     
     }
      
     
@@ -318,6 +317,9 @@ extension HomeVC : UICollectionViewDelegate , UICollectionViewDelegateFlowLayout
                 if newArrivalArray[indexPath.row].in_favorites! {
                     cell.favBtn.setImage(UIImage(systemName:  "heart.fill"), for: .normal)
                     cell.favBtn.tintColor = .red
+                }else{
+                    cell.favBtn.setImage(UIImage(systemName:  "heart"), for: .normal)
+                    cell.favBtn.tintColor = .lightGray
                 }
             }
          

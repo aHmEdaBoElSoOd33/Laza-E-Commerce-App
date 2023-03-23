@@ -25,6 +25,10 @@ class CategoriesDetailsVC: UIViewController{
     var indicatorView : UIActivityIndicatorView?
     override func viewDidLoad() {
         super.viewDidLoad()
+    
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         uiSetUp()
         getCateguriesDetailsData(id: id!)
         wishlistApi.delegate = self
@@ -81,6 +85,7 @@ extension CategoriesDetailsVC : UICollectionViewDelegate , UICollectionViewDataS
         guard let indexPath = self.categoriesProductsCollectionView.indexPath(for: cell) else { return }
         
         wishlistApi.addproductToFavoriets(id: categoryProuductsArray[indexPath.row].id!)
+        
         print("Button tapped on row \(indexPath.row)")
     }
     
@@ -99,10 +104,23 @@ extension CategoriesDetailsVC : UICollectionViewDelegate , UICollectionViewDataS
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: allProductsCollectioViewCell.ID, for: indexPath) as! allProductsCollectioViewCell
+        if categoryProuductsArray.isEmpty {
+            cell.favBtn.setImage(UIImage(systemName:  "heart"), for: .normal)
+            cell.favBtn.tintColor = .lightGray
+        }else{
+            if categoryProuductsArray[indexPath.row].in_favorites! {
+                cell.favBtn.setImage(UIImage(systemName:  "heart.fill"), for: .normal)
+                cell.favBtn.tintColor = .red
+            }else{
+                cell.favBtn.setImage(UIImage(systemName:  "heart"), for: .normal)
+                cell.favBtn.tintColor = .lightGray
+            }
+        }
         cell.productImage.kf.setImage(with: URL(string: categoryProuductsArray[indexPath.row].image!),placeholder: UIImage(named: "Logo")?.withTintColor(UIColor(named: "BackGrpundColor")!))
         cell.productName.text = categoryProuductsArray[indexPath.row].name
         cell.productPrice.text = "\(categoryProuductsArray[indexPath.row].price!)"
         cell.delegate = self
+        
         return cell
     }
     
@@ -114,6 +132,7 @@ extension CategoriesDetailsVC : UICollectionViewDelegate , UICollectionViewDataS
     }
       
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+         
         let vc = storyboard?.instantiateViewController(withIdentifier: ProductDetailVC.ID) as! ProductDetailVC
         vc.id = categoryProuductsArray[indexPath.row].id
         vc.modalTransitionStyle = .crossDissolve
