@@ -77,11 +77,7 @@ class HomeVC: UIViewController {
         }
         
     }
-    
-    
-    
-    
-    
+     
     
     func fetchCategorisDataFromApi(){
         
@@ -96,10 +92,7 @@ class HomeVC: UIViewController {
         
     }
     
-    
-    
-    
-    
+     
     func setUpUIwithData(with userdata: DataClass){
         userProflleName.text = userdata.name
         userProfileImage.kf.setImage(with: URL(string: userdata.image!))
@@ -354,6 +347,7 @@ extension HomeVC : UICollectionViewDelegate , UICollectionViewDelegateFlowLayout
         default: 
             let vc = storyboard?.instantiateViewController(withIdentifier: ProductDetailVC.ID) as! ProductDetailVC
             vc.id = newArrivalArray[indexPath.row].id
+            vc.productinCart = newArrivalArray[indexPath.row].in_cart
             vc.modalTransitionStyle = .crossDissolve
             vc.modalPresentationStyle = .fullScreen
             present(vc, animated: true)

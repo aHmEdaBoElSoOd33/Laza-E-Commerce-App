@@ -1709,6 +1709,9 @@
                                         <color key="tintColor" red="0.96078431369999995" green="0.96470588239999999" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Add to Cart"/>
+                                        <connections>
+                                            <action selector="AddOrRemoveProductFromCart:" destination="bQr-Cf-hTq" eventType="touchUpInside" id="aWH-33-Emu"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" name="BackGrpundColor"/>
@@ -1901,6 +1904,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addOrRemoveFromCartBtn" destination="rn6-2p-NNn" id="MLa-m6-4LQ"/>
                         <outlet property="descriptionTitle" destination="19f-B5-hi2" id="STp-HV-5Bg"/>
                         <outlet property="priceTitle" destination="URz-8z-t09" id="j3Z-tK-HIL"/>
                         <outlet property="productDescription" destination="8P3-s4-dfZ" id="cwH-a3-m73"/>

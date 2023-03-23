@@ -135,6 +135,7 @@ extension CategoriesDetailsVC : UICollectionViewDelegate , UICollectionViewDataS
          
         let vc = storyboard?.instantiateViewController(withIdentifier: ProductDetailVC.ID) as! ProductDetailVC
         vc.id = categoryProuductsArray[indexPath.row].id
+        vc.productinCart = categoryProuductsArray[indexPath.row].in_cart
         vc.modalTransitionStyle = .crossDissolve
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true)

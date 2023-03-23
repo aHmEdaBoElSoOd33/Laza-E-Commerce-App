@@ -82,9 +82,6 @@ class WishlistVC: UIViewController {
             sender.setTitle("Edit", for: .normal)
             sender.setImage(UIImage(named: "Edit"), for: .normal)
         }
-        
-        
-        
     }
     
     
@@ -142,12 +139,12 @@ extension WishlistVC : UICollectionViewDelegate , UICollectionViewDataSource,UIC
      
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.bounds.width / 2 - 15, height: 260)
-    }
-    
+    } 
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = storyboard?.instantiateViewController(withIdentifier: ProductDetailVC.ID) as! ProductDetailVC
         vc.id = wishlistArray[indexPath.row].product?.id
+        vc.productinCart = false
         vc.modalTransitionStyle = .crossDissolve
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true)

@@ -31,20 +31,20 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="co6-Oy-gxl">
-                                <rect key="frame" x="110" y="10" width="180" height="40.666666666666664"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="co6-Oy-gxl">
+                                <rect key="frame" x="110" y="10" width="180" height="33.666666666666664"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="180" id="LaV-tg-BJb"/>
                                 </constraints>
                                 <string key="text">Men's Tie-Dye T-Shirt
 Nike Sportswear </string>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$45 (-$4.00 Tax)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ou7-vd-3fm">
-                                <rect key="frame" x="110" y="60.666666666666671" width="117.33333333333331" height="18"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <rect key="frame" x="110" y="48.666666666666664" width="103.66666666666669" height="14.333333333333336"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -114,7 +114,7 @@ Nike Sportswear </string>
                             <constraint firstAttribute="trailing" secondItem="JEa-OF-1o3" secondAttribute="trailing" constant="20" id="XGV-DO-NV4"/>
                             <constraint firstItem="co6-Oy-gxl" firstAttribute="leading" secondItem="ika-Ou-AKG" secondAttribute="trailing" constant="20" id="Y6V-NE-j9h"/>
                             <constraint firstItem="ika-Ou-AKG" firstAttribute="leading" secondItem="RZl-Io-LQB" secondAttribute="leading" constant="10" id="dPa-Dg-ih6"/>
-                            <constraint firstItem="Ou7-vd-3fm" firstAttribute="top" secondItem="co6-Oy-gxl" secondAttribute="bottom" constant="10" id="dRy-xn-gmi"/>
+                            <constraint firstItem="Ou7-vd-3fm" firstAttribute="top" secondItem="co6-Oy-gxl" secondAttribute="bottom" constant="5" id="dRy-xn-gmi"/>
                             <constraint firstItem="6J2-gg-RyC" firstAttribute="leading" secondItem="8AY-ox-Pob" secondAttribute="trailing" constant="10" id="ekd-4G-lUJ"/>
                             <constraint firstItem="Ou7-vd-3fm" firstAttribute="leading" secondItem="co6-Oy-gxl" secondAttribute="leading" id="gMq-16-3dw"/>
                             <constraint firstItem="MZw-VT-UMp" firstAttribute="leading" secondItem="Ou7-vd-3fm" secondAttribute="leading" id="gsQ-tp-CYr"/>

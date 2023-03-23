@@ -11,8 +11,8 @@ class ProductDetailVC: UIViewController {
 
     //MARK: - IBOutlets
     
+    @IBOutlet weak var addOrRemoveFromCartBtn: UIButton!
     @IBOutlet weak var descriptionTitle: UILabel!
-    
     @IBOutlet weak var priceTitle: UILabel!
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var productName: UILabel!
@@ -27,14 +27,26 @@ class ProductDetailVC: UIViewController {
     var productDetailsApi = ProductDetailsApi()
     var indicatorView : UIActivityIndicatorView?
     var productImagesArray : [String] = []
+    var cartApi = CartApi()
+    var productinCart : Bool?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print(id)
+        cartApi.delegate = self
         uiSetIp()
         getProductDetailsFromApi(id: id!)
     }
     
     func uiSetIp(){
+        
+
+        if productinCart! {
+            addOrRemoveFromCartBtn.setTitle("Remove From Cart", for: .normal)
+        }else{
+            addOrRemoveFromCartBtn.setTitle("Add to Cart", for: .normal)
+        }
+        
         priceTitle.isHidden = true
         descriptionTitle.isHidden = true 
         indicatorView = self.activityIndicator(style: .large,
@@ -44,10 +56,7 @@ class ProductDetailVC: UIViewController {
         productImagesCollectionView.delegate = self
         productImagesCollectionView.dataSource = self
     }
-    
-    
-    
-    
+      
     
     func getProductDetailsFromApi(id:Int){
         
@@ -81,11 +90,28 @@ class ProductDetailVC: UIViewController {
     @IBAction func backBtn(_ sender: Any) {
         dismiss(animated: true)
     }
+    
+    
+    @IBAction func AddOrRemoveProductFromCart(_ sender: Any) {
+        
+        cartApi.addproductToCart(id: id!)
+        
+    }
+    
+    
 }
 
 
 
-extension ProductDetailVC: UICollectionViewDelegate , UICollectionViewDataSource , UICollectionViewDelegateFlowLayout{
+extension ProductDetailVC: UICollectionViewDelegate , UICollectionViewDataSource , UICollectionViewDelegateFlowLayout , CartApiDelegate {
+    func isDone(message: String) {
+        showALert(message: message)
+    }
+    
+    func isFail(message: String) {
+        showALert(message: message)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return productImagesArray.count
     }
