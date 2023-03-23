@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="allProductsCollectioViewCell" id="gTV-IL-0wX" customClass="allProductsCollectioViewCell" customModule="LazaApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="181" height="252"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="181" height="252"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rXq-tp-Mhb">
+                        <rect key="frame" x="0.0" y="0.0" width="181" height="252"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cellimage" translatesAutoresizingMaskIntoConstraints="NO" id="508-xS-0xy">
+                                <rect key="frame" x="0.0" y="0.0" width="181" height="180"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="y0S-4m-0Ae"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nike Sportswear Club Fleece" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bwz-4n-YwF">
+                                <rect key="frame" x="0.0" y="190" width="181" height="14.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Rg-wk-sLI">
+                                <rect key="frame" x="0.0" y="209.33333333333334" width="28.333333333333332" height="17"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WIC-Po-dmv">
+                                <rect key="frame" x="139" y="20" width="22" height="22"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="WIC-Po-dmv" secondAttribute="height" multiplier="1:1" id="Pla-hB-V1a"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="Wishlist"/>
+                                <connections>
+                                    <action selector="addToWishListBtn:" destination="gTV-IL-0wX" eventType="touchUpInside" id="a9D-64-C0b"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="508-xS-0xy" secondAttribute="trailing" id="1mi-ux-pTV"/>
+                            <constraint firstItem="8Rg-wk-sLI" firstAttribute="top" secondItem="bwz-4n-YwF" secondAttribute="bottom" constant="5" id="3Hm-1p-74o"/>
+                            <constraint firstItem="508-xS-0xy" firstAttribute="leading" secondItem="rXq-tp-Mhb" secondAttribute="leading" id="4Ln-e3-Qsx"/>
+                            <constraint firstItem="508-xS-0xy" firstAttribute="top" secondItem="rXq-tp-Mhb" secondAttribute="top" id="5X2-Ri-UN1"/>
+                            <constraint firstItem="bwz-4n-YwF" firstAttribute="top" secondItem="508-xS-0xy" secondAttribute="bottom" constant="10" id="IQI-cJ-Avf"/>
+                            <constraint firstItem="8Rg-wk-sLI" firstAttribute="leading" secondItem="bwz-4n-YwF" secondAttribute="leading" id="W7Z-Lh-NXk"/>
+                            <constraint firstAttribute="trailing" secondItem="WIC-Po-dmv" secondAttribute="trailing" constant="20" id="Wwj-IU-pfX"/>
+                            <constraint firstItem="bwz-4n-YwF" firstAttribute="leading" secondItem="508-xS-0xy" secondAttribute="leading" id="gvX-Vs-ztW"/>
+                            <constraint firstAttribute="trailing" secondItem="bwz-4n-YwF" secondAttribute="trailing" id="iyX-hG-431"/>
+                            <constraint firstItem="WIC-Po-dmv" firstAttribute="top" secondItem="rXq-tp-Mhb" secondAttribute="top" constant="20" id="zk4-um-bzO"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="rXq-tp-Mhb" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="A0g-4i-16j"/>
+                <constraint firstItem="rXq-tp-Mhb" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="I9j-dF-Aqw"/>
+                <constraint firstAttribute="bottom" secondItem="rXq-tp-Mhb" secondAttribute="bottom" id="pOv-a7-5G6"/>
+                <constraint firstAttribute="trailing" secondItem="rXq-tp-Mhb" secondAttribute="trailing" id="wfd-kg-Y5u"/>
+            </constraints>
+            <size key="customSize" width="181" height="252"/>
+            <connections>
+                <outlet property="favBtn" destination="WIC-Po-dmv" id="4aE-WH-MzN"/>
+                <outlet property="productImage" destination="508-xS-0xy" id="VdD-Gt-rn8"/>
+                <outlet property="productName" destination="bwz-4n-YwF" id="rZL-3P-RZH"/>
+                <outlet property="productPrice" destination="8Rg-wk-sLI" id="bMF-YY-5QS"/>
+            </connections>
+            <point key="canvasLocation" x="118.32061068702289" y="-25.35211267605634"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="Wishlist" width="21" height="20"/>
+        <image name="cellimage" width="864" height="1080"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

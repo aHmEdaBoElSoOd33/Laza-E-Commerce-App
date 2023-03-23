@@ -7,25 +7,110 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09C9FEA3F7F32CC5D4064270 /* Pods_LazaApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B071D30A22D02FE49E2F24F9 /* Pods_LazaApp.framework */; };
+		E23CE46A29C4DB6A00B29873 /* ForgetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23CE46929C4DB6A00B29873 /* ForgetPasswordVC.swift */; };
+		E23CE46C29C4E1F800B29873 /* VerifyCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23CE46B29C4E1F800B29873 /* VerifyCodeVC.swift */; };
+		E23CE46E29C4E82A00B29873 /* SetNewPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23CE46D29C4E82A00B29873 /* SetNewPasswordVC.swift */; };
+		E25289F529CC72290010FAE8 /* AddWishlistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25289F429CC72290010FAE8 /* AddWishlistModel.swift */; };
+		E260641329CA0811005BFFCD /* CategoriesApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = E260641229CA0811005BFFCD /* CategoriesApi.swift */; };
+		E260641529CA08BE005BFFCD /* categoriyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E260641429CA08BE005BFFCD /* categoriyModel.swift */; };
+		E260641729CA1BC3005BFFCD /* HomeVCModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E260641629CA1BC3005BFFCD /* HomeVCModel.swift */; };
+		E260641929CA3278005BFFCD /* categoriesDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E260641829CA3278005BFFCD /* categoriesDetailsModel.swift */; };
+		E2776B7929C742B8001173E7 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2776B7829C742B8001173E7 /* UIViewControllerExtension.swift */; };
+		E2776B7D29C772B0001173E7 /* cartCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2776B7B29C772B0001173E7 /* cartCollectionViewCell.swift */; };
+		E2776B7E29C772B0001173E7 /* cartCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2776B7C29C772B0001173E7 /* cartCollectionViewCell.xib */; };
+		E2776B8329C772D3001173E7 /* addressCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2776B8129C772D3001173E7 /* addressCollectionViewCell.swift */; };
+		E2776B8429C772D3001173E7 /* addressCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2776B8229C772D3001173E7 /* addressCollectionViewCell.xib */; };
+		E28D75FF29C87A39007D07F9 /* AllCategoriesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28D75FE29C87A39007D07F9 /* AllCategoriesVC.swift */; };
+		E28D760129C87BF5007D07F9 /* ShowAllCateroriesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28D760029C87BF5007D07F9 /* ShowAllCateroriesCollectionViewCell.swift */; };
+		E28D760329C87FEE007D07F9 /* CategoriesDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28D760229C87FEE007D07F9 /* CategoriesDetailsVC.swift */; };
+		E28D760629C89C6F007D07F9 /* UserRegesterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28D760529C89C6F007D07F9 /* UserRegesterModel.swift */; };
+		E28D760A29C89CB2007D07F9 /* RegesterApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28D760929C89CB2007D07F9 /* RegesterApi.swift */; };
+		E28D760D29C8B9D4007D07F9 /* HomeApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28D760C29C8B9D4007D07F9 /* HomeApi.swift */; };
+		E28D761029C8BCDF007D07F9 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28D760F29C8BCDF007D07F9 /* ProfileModel.swift */; };
+		E29EBA7729CB26D100A74C42 /* ProductDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29EBA7629CB26D100A74C42 /* ProductDetailsModel.swift */; };
+		E29EBA7929CB27F900A74C42 /* ProductDetailsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29EBA7829CB27F900A74C42 /* ProductDetailsApi.swift */; };
+		E29EBA7B29CB2B8F00A74C42 /* ProductDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29EBA7A29CB2B8F00A74C42 /* ProductDetailVC.swift */; };
+		E29EBA7F29CB2F0C00A74C42 /* ProductDetailsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29EBA7E29CB2F0C00A74C42 /* ProductDetailsCollectionViewCell.swift */; };
+		E29EBA8229CB826200A74C42 /* WishlistApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29EBA8129CB826200A74C42 /* WishlistApi.swift */; };
+		E29EBA8529CB839600A74C42 /* WishlistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29EBA8429CB839600A74C42 /* WishlistModel.swift */; };
+		E2A9566F29BF439400840DD2 /* SocialMediaRegesterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A9566E29BF439400840DD2 /* SocialMediaRegesterVC.swift */; };
+		E2A9567129BF440700840DD2 /* LoginAndRegerterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A9567029BF440700840DD2 /* LoginAndRegerterVC.swift */; };
+		E2A9FF2529C5F97600FCD2F6 /* ContainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A9FF2429C5F97600FCD2F6 /* ContainerVC.swift */; };
+		E2A9FF2929C5FDEA00FCD2F6 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A9FF2829C5FDEA00FCD2F6 /* HomeVC.swift */; };
+		E2A9FF2B29C5FDF900FCD2F6 /* WishlistVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A9FF2A29C5FDF900FCD2F6 /* WishlistVC.swift */; };
+		E2A9FF2D29C5FE0400FCD2F6 /* CartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A9FF2C29C5FE0400FCD2F6 /* CartVC.swift */; };
+		E2A9FF2F29C5FE1200FCD2F6 /* WalletsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A9FF2E29C5FE1200FCD2F6 /* WalletsVC.swift */; };
+		E2A9FF3329C6100F00FCD2F6 /* categoriesCollectionVieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A9FF3129C6100F00FCD2F6 /* categoriesCollectionVieCell.swift */; };
+		E2A9FF3429C6100F00FCD2F6 /* categoriesCollectionVieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2A9FF3229C6100F00FCD2F6 /* categoriesCollectionVieCell.xib */; };
+		E2A9FF3B29C6106400FCD2F6 /* allProductsCollectioViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A9FF3929C6106400FCD2F6 /* allProductsCollectioViewCell.swift */; };
+		E2A9FF3C29C6106400FCD2F6 /* allProductsCollectioViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2A9FF3A29C6106400FCD2F6 /* allProductsCollectioViewCell.xib */; };
+		E2E5521829BF529600DA0876 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E2E5521729BF529600DA0876 /* GoogleService-Info.plist */; };
 		E2E6916B29BBEB6A00E7B002 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E6916A29BBEB6A00E7B002 /* AppDelegate.swift */; };
 		E2E6916D29BBEB6A00E7B002 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E6916C29BBEB6A00E7B002 /* SceneDelegate.swift */; };
-		E2E6916F29BBEB6A00E7B002 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E6916E29BBEB6A00E7B002 /* ViewController.swift */; };
 		E2E6917229BBEB6A00E7B002 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2E6917029BBEB6A00E7B002 /* Main.storyboard */; };
 		E2E6917529BBEB6A00E7B002 /* LazaApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E2E6917329BBEB6A00E7B002 /* LazaApp.xcdatamodeld */; };
 		E2E6917729BBEB6B00E7B002 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2E6917629BBEB6B00E7B002 /* Assets.xcassets */; };
 		E2E6917A29BBEB6B00E7B002 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2E6917829BBEB6B00E7B002 /* LaunchScreen.storyboard */; };
+		E2E6918629BBED6800E7B002 /* SplashScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E6918529BBED6800E7B002 /* SplashScreenVC.swift */; };
+		E2E6918929BBEF4000E7B002 /* extentsions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E6918829BBEF4000E7B002 /* extentsions.swift */; };
+		E2E6918B29BBF12A00E7B002 /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E6918A29BBF12A00E7B002 /* OnboardingVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5F17E2F241B6E9D3506A72B8 /* Pods-LazaApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LazaApp.release.xcconfig"; path = "Target Support Files/Pods-LazaApp/Pods-LazaApp.release.xcconfig"; sourceTree = "<group>"; };
+		B071D30A22D02FE49E2F24F9 /* Pods_LazaApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LazaApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CBEB97A1A4E659326C1A537B /* Pods-LazaApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LazaApp.debug.xcconfig"; path = "Target Support Files/Pods-LazaApp/Pods-LazaApp.debug.xcconfig"; sourceTree = "<group>"; };
+		E23CE46929C4DB6A00B29873 /* ForgetPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordVC.swift; sourceTree = "<group>"; };
+		E23CE46B29C4E1F800B29873 /* VerifyCodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyCodeVC.swift; sourceTree = "<group>"; };
+		E23CE46D29C4E82A00B29873 /* SetNewPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNewPasswordVC.swift; sourceTree = "<group>"; };
+		E25289F429CC72290010FAE8 /* AddWishlistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWishlistModel.swift; sourceTree = "<group>"; };
+		E260641229CA0811005BFFCD /* CategoriesApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesApi.swift; sourceTree = "<group>"; };
+		E260641429CA08BE005BFFCD /* categoriyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = categoriyModel.swift; sourceTree = "<group>"; };
+		E260641629CA1BC3005BFFCD /* HomeVCModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVCModel.swift; sourceTree = "<group>"; };
+		E260641829CA3278005BFFCD /* categoriesDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = categoriesDetailsModel.swift; sourceTree = "<group>"; };
+		E2776B7829C742B8001173E7 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		E2776B7B29C772B0001173E7 /* cartCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cartCollectionViewCell.swift; sourceTree = "<group>"; };
+		E2776B7C29C772B0001173E7 /* cartCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = cartCollectionViewCell.xib; sourceTree = "<group>"; };
+		E2776B8129C772D3001173E7 /* addressCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addressCollectionViewCell.swift; sourceTree = "<group>"; };
+		E2776B8229C772D3001173E7 /* addressCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = addressCollectionViewCell.xib; sourceTree = "<group>"; };
+		E28D75FE29C87A39007D07F9 /* AllCategoriesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCategoriesVC.swift; sourceTree = "<group>"; };
+		E28D760029C87BF5007D07F9 /* ShowAllCateroriesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowAllCateroriesCollectionViewCell.swift; sourceTree = "<group>"; };
+		E28D760229C87FEE007D07F9 /* CategoriesDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesDetailsVC.swift; sourceTree = "<group>"; };
+		E28D760529C89C6F007D07F9 /* UserRegesterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegesterModel.swift; sourceTree = "<group>"; };
+		E28D760929C89CB2007D07F9 /* RegesterApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegesterApi.swift; sourceTree = "<group>"; };
+		E28D760C29C8B9D4007D07F9 /* HomeApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeApi.swift; sourceTree = "<group>"; };
+		E28D760F29C8BCDF007D07F9 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
+		E29EBA7629CB26D100A74C42 /* ProductDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsModel.swift; sourceTree = "<group>"; };
+		E29EBA7829CB27F900A74C42 /* ProductDetailsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsApi.swift; sourceTree = "<group>"; };
+		E29EBA7A29CB2B8F00A74C42 /* ProductDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailVC.swift; sourceTree = "<group>"; };
+		E29EBA7E29CB2F0C00A74C42 /* ProductDetailsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsCollectionViewCell.swift; sourceTree = "<group>"; };
+		E29EBA8129CB826200A74C42 /* WishlistApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistApi.swift; sourceTree = "<group>"; };
+		E29EBA8429CB839600A74C42 /* WishlistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistModel.swift; sourceTree = "<group>"; };
+		E2A9566E29BF439400840DD2 /* SocialMediaRegesterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SocialMediaRegesterVC.swift; path = "../New Group/SocialMediaRegesterVC.swift"; sourceTree = "<group>"; };
+		E2A9567029BF440700840DD2 /* LoginAndRegerterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAndRegerterVC.swift; sourceTree = "<group>"; };
+		E2A9FF2429C5F97600FCD2F6 /* ContainerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerVC.swift; sourceTree = "<group>"; };
+		E2A9FF2829C5FDEA00FCD2F6 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		E2A9FF2A29C5FDF900FCD2F6 /* WishlistVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistVC.swift; sourceTree = "<group>"; };
+		E2A9FF2C29C5FE0400FCD2F6 /* CartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartVC.swift; sourceTree = "<group>"; };
+		E2A9FF2E29C5FE1200FCD2F6 /* WalletsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletsVC.swift; sourceTree = "<group>"; };
+		E2A9FF3129C6100F00FCD2F6 /* categoriesCollectionVieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = categoriesCollectionVieCell.swift; sourceTree = "<group>"; };
+		E2A9FF3229C6100F00FCD2F6 /* categoriesCollectionVieCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = categoriesCollectionVieCell.xib; sourceTree = "<group>"; };
+		E2A9FF3929C6106400FCD2F6 /* allProductsCollectioViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = allProductsCollectioViewCell.swift; sourceTree = "<group>"; };
+		E2A9FF3A29C6106400FCD2F6 /* allProductsCollectioViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = allProductsCollectioViewCell.xib; sourceTree = "<group>"; };
+		E2E5521729BF529600DA0876 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E2E5521929BF5B8F00DA0876 /* LazaAppDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LazaAppDebug.entitlements; sourceTree = "<group>"; };
 		E2E6916729BBEB6A00E7B002 /* LazaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LazaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2E6916A29BBEB6A00E7B002 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2E6916C29BBEB6A00E7B002 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E2E6916E29BBEB6A00E7B002 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E2E6917129BBEB6A00E7B002 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E2E6917429BBEB6A00E7B002 /* LazaApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LazaApp.xcdatamodel; sourceTree = "<group>"; };
 		E2E6917629BBEB6B00E7B002 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E2E6917929BBEB6B00E7B002 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E2E6917B29BBEB6B00E7B002 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E2E6918529BBED6800E7B002 /* SplashScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenVC.swift; sourceTree = "<group>"; };
+		E2E6918829BBEF4000E7B002 /* extentsions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extentsions.swift; sourceTree = "<group>"; };
+		E2E6918A29BBF12A00E7B002 /* OnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +118,212 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09C9FEA3F7F32CC5D4064270 /* Pods_LazaApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C211624FD8704404BADB59C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B071D30A22D02FE49E2F24F9 /* Pods_LazaApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		55E9E4798CA6C4717D440E59 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CBEB97A1A4E659326C1A537B /* Pods-LazaApp.debug.xcconfig */,
+				5F17E2F241B6E9D3506A72B8 /* Pods-LazaApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E2776B7A29C7728F001173E7 /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				E2776B7B29C772B0001173E7 /* cartCollectionViewCell.swift */,
+				E2776B7C29C772B0001173E7 /* cartCollectionViewCell.xib */,
+				E2776B8129C772D3001173E7 /* addressCollectionViewCell.swift */,
+				E2776B8229C772D3001173E7 /* addressCollectionViewCell.xib */,
+			);
+			path = cells;
+			sourceTree = "<group>";
+		};
+		E28D760429C89C39007D07F9 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				E28D760529C89C6F007D07F9 /* UserRegesterModel.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		E28D760729C89C8D007D07F9 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				E29EBA8029CB824500A74C42 /* Wishlist */,
+				E28D760B29C8B9C4007D07F9 /* Home */,
+				E28D760829C89C94007D07F9 /* Auth */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		E28D760829C89C94007D07F9 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				E28D760929C89CB2007D07F9 /* RegesterApi.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		E28D760B29C8B9C4007D07F9 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				E28D760C29C8B9D4007D07F9 /* HomeApi.swift */,
+				E260641229CA0811005BFFCD /* CategoriesApi.swift */,
+				E29EBA7829CB27F900A74C42 /* ProductDetailsApi.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		E28D760E29C8BCC9007D07F9 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				E28D760F29C8BCDF007D07F9 /* ProfileModel.swift */,
+				E260641429CA08BE005BFFCD /* categoriyModel.swift */,
+				E260641629CA1BC3005BFFCD /* HomeVCModel.swift */,
+				E260641829CA3278005BFFCD /* categoriesDetailsModel.swift */,
+				E29EBA7629CB26D100A74C42 /* ProductDetailsModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		E29EBA7C29CB2B9B00A74C42 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				E2A9FF2829C5FDEA00FCD2F6 /* HomeVC.swift */,
+				E28D75FE29C87A39007D07F9 /* AllCategoriesVC.swift */,
+				E28D760229C87FEE007D07F9 /* CategoriesDetailsVC.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		E29EBA7D29CB2BAA00A74C42 /* Product Details */ = {
+			isa = PBXGroup;
+			children = (
+				E29EBA7A29CB2B8F00A74C42 /* ProductDetailVC.swift */,
+				E29EBA7E29CB2F0C00A74C42 /* ProductDetailsCollectionViewCell.swift */,
+			);
+			path = "Product Details";
+			sourceTree = "<group>";
+		};
+		E29EBA8029CB824500A74C42 /* Wishlist */ = {
+			isa = PBXGroup;
+			children = (
+				E29EBA8129CB826200A74C42 /* WishlistApi.swift */,
+			);
+			path = Wishlist;
+			sourceTree = "<group>";
+		};
+		E29EBA8329CB838500A74C42 /* Wishlist */ = {
+			isa = PBXGroup;
+			children = (
+				E29EBA8429CB839600A74C42 /* WishlistModel.swift */,
+				E25289F429CC72290010FAE8 /* AddWishlistModel.swift */,
+			);
+			path = Wishlist;
+			sourceTree = "<group>";
+		};
+		E2A9FF1B29C5DAA200FCD2F6 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				E2A9566E29BF439400840DD2 /* SocialMediaRegesterVC.swift */,
+				E2A9567029BF440700840DD2 /* LoginAndRegerterVC.swift */,
+				E23CE46929C4DB6A00B29873 /* ForgetPasswordVC.swift */,
+				E23CE46B29C4E1F800B29873 /* VerifyCodeVC.swift */,
+				E23CE46D29C4E82A00B29873 /* SetNewPasswordVC.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		E2A9FF1C29C5DABB00FCD2F6 /* SplashScreen */ = {
+			isa = PBXGroup;
+			children = (
+				E2E6918529BBED6800E7B002 /* SplashScreenVC.swift */,
+				E2E6918A29BBF12A00E7B002 /* OnboardingVC.swift */,
+			);
+			path = SplashScreen;
+			sourceTree = "<group>";
+		};
+		E2A9FF1D29C5F8C900FCD2F6 /* TabBarControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E2A9FF2429C5F97600FCD2F6 /* ContainerVC.swift */,
+				E2A9FF1E29C5F8DE00FCD2F6 /* Home */,
+				E2A9FF1F29C5F8EA00FCD2F6 /* Wishlist */,
+				E2A9FF2029C5F8F700FCD2F6 /* Cart */,
+				E2A9FF2129C5F8FE00FCD2F6 /* Wallets */,
+			);
+			path = TabBarControllers;
+			sourceTree = "<group>";
+		};
+		E2A9FF1E29C5F8DE00FCD2F6 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				E29EBA7D29CB2BAA00A74C42 /* Product Details */,
+				E29EBA7C29CB2B9B00A74C42 /* Main */,
+				E2A9FF3029C60FBF00FCD2F6 /* cells */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		E2A9FF1F29C5F8EA00FCD2F6 /* Wishlist */ = {
+			isa = PBXGroup;
+			children = (
+				E2A9FF2A29C5FDF900FCD2F6 /* WishlistVC.swift */,
+			);
+			path = Wishlist;
+			sourceTree = "<group>";
+		};
+		E2A9FF2029C5F8F700FCD2F6 /* Cart */ = {
+			isa = PBXGroup;
+			children = (
+				E2A9FF2C29C5FE0400FCD2F6 /* CartVC.swift */,
+				E2776B7A29C7728F001173E7 /* cells */,
+			);
+			path = Cart;
+			sourceTree = "<group>";
+		};
+		E2A9FF2129C5F8FE00FCD2F6 /* Wallets */ = {
+			isa = PBXGroup;
+			children = (
+				E2A9FF2E29C5FE1200FCD2F6 /* WalletsVC.swift */,
+			);
+			path = Wallets;
+			sourceTree = "<group>";
+		};
+		E2A9FF3029C60FBF00FCD2F6 /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				E2A9FF3129C6100F00FCD2F6 /* categoriesCollectionVieCell.swift */,
+				E2A9FF3229C6100F00FCD2F6 /* categoriesCollectionVieCell.xib */,
+				E2A9FF3929C6106400FCD2F6 /* allProductsCollectioViewCell.swift */,
+				E2A9FF3A29C6106400FCD2F6 /* allProductsCollectioViewCell.xib */,
+				E28D760029C87BF5007D07F9 /* ShowAllCateroriesCollectionViewCell.swift */,
+			);
+			path = cells;
+			sourceTree = "<group>";
+		};
 		E2E6915E29BBEB6900E7B002 = {
 			isa = PBXGroup;
 			children = (
 				E2E6916929BBEB6A00E7B002 /* LazaApp */,
 				E2E6916829BBEB6A00E7B002 /* Products */,
+				55E9E4798CA6C4717D440E59 /* Pods */,
+				1C211624FD8704404BADB59C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,16 +338,66 @@
 		E2E6916929BBEB6A00E7B002 /* LazaApp */ = {
 			isa = PBXGroup;
 			children = (
-				E2E6916A29BBEB6A00E7B002 /* AppDelegate.swift */,
-				E2E6916C29BBEB6A00E7B002 /* SceneDelegate.swift */,
-				E2E6916E29BBEB6A00E7B002 /* ViewController.swift */,
-				E2E6917029BBEB6A00E7B002 /* Main.storyboard */,
+				E2E5521929BF5B8F00DA0876 /* LazaAppDebug.entitlements */,
+				E28D760729C89C8D007D07F9 /* Api */,
+				E2E6918429BBEC1E00E7B002 /* Core */,
+				E2E6918729BBEEF000E7B002 /* Extensions */,
+				E2E6918329BBEC1500E7B002 /* Scenes */,
+				E2E6918229BBEC0F00E7B002 /* View */,
+				E2E6918129BBEC0700E7B002 /* Model */,
 				E2E6917629BBEB6B00E7B002 /* Assets.xcassets */,
-				E2E6917829BBEB6B00E7B002 /* LaunchScreen.storyboard */,
+				E2E5521729BF529600DA0876 /* GoogleService-Info.plist */,
 				E2E6917B29BBEB6B00E7B002 /* Info.plist */,
 				E2E6917329BBEB6A00E7B002 /* LazaApp.xcdatamodeld */,
 			);
 			path = LazaApp;
+			sourceTree = "<group>";
+		};
+		E2E6918129BBEC0700E7B002 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E29EBA8329CB838500A74C42 /* Wishlist */,
+				E28D760E29C8BCC9007D07F9 /* Home */,
+				E28D760429C89C39007D07F9 /* Auth */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E2E6918229BBEC0F00E7B002 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E2E6917029BBEB6A00E7B002 /* Main.storyboard */,
+				E2E6917829BBEB6B00E7B002 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E2E6918329BBEC1500E7B002 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				E2A9FF1C29C5DABB00FCD2F6 /* SplashScreen */,
+				E2A9FF1B29C5DAA200FCD2F6 /* Auth */,
+				E2A9FF1D29C5F8C900FCD2F6 /* TabBarControllers */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		E2E6918429BBEC1E00E7B002 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				E2E6916A29BBEB6A00E7B002 /* AppDelegate.swift */,
+				E2E6916C29BBEB6A00E7B002 /* SceneDelegate.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		E2E6918729BBEEF000E7B002 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E2E6918829BBEF4000E7B002 /* extentsions.swift */,
+				E2776B7829C742B8001173E7 /* UIViewControllerExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,9 +407,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E2E6917E29BBEB6B00E7B002 /* Build configuration list for PBXNativeTarget "LazaApp" */;
 			buildPhases = (
+				A40FF2178A8652931333914D /* [CP] Check Pods Manifest.lock */,
 				E2E6916329BBEB6A00E7B002 /* Sources */,
 				E2E6916429BBEB6A00E7B002 /* Frameworks */,
 				E2E6916529BBEB6A00E7B002 /* Resources */,
+				46155A41D1E247B93D35840B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -128,7 +460,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2A9FF3C29C6106400FCD2F6 /* allProductsCollectioViewCell.xib in Resources */,
 				E2E6917A29BBEB6B00E7B002 /* LaunchScreen.storyboard in Resources */,
+				E2E5521829BF529600DA0876 /* GoogleService-Info.plist in Resources */,
+				E2776B8429C772D3001173E7 /* addressCollectionViewCell.xib in Resources */,
+				E2776B7E29C772B0001173E7 /* cartCollectionViewCell.xib in Resources */,
+				E2A9FF3429C6100F00FCD2F6 /* categoriesCollectionVieCell.xib in Resources */,
 				E2E6917729BBEB6B00E7B002 /* Assets.xcassets in Resources */,
 				E2E6917229BBEB6A00E7B002 /* Main.storyboard in Resources */,
 			);
@@ -136,15 +473,92 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		46155A41D1E247B93D35840B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LazaApp/Pods-LazaApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LazaApp/Pods-LazaApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LazaApp/Pods-LazaApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A40FF2178A8652931333914D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LazaApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E2E6916329BBEB6A00E7B002 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2E6916F29BBEB6A00E7B002 /* ViewController.swift in Sources */,
+				E28D75FF29C87A39007D07F9 /* AllCategoriesVC.swift in Sources */,
+				E2776B8329C772D3001173E7 /* addressCollectionViewCell.swift in Sources */,
+				E2A9FF2529C5F97600FCD2F6 /* ContainerVC.swift in Sources */,
+				E28D760A29C89CB2007D07F9 /* RegesterApi.swift in Sources */,
+				E2A9567129BF440700840DD2 /* LoginAndRegerterVC.swift in Sources */,
+				E29EBA7929CB27F900A74C42 /* ProductDetailsApi.swift in Sources */,
+				E29EBA7B29CB2B8F00A74C42 /* ProductDetailVC.swift in Sources */,
+				E260641329CA0811005BFFCD /* CategoriesApi.swift in Sources */,
+				E23CE46A29C4DB6A00B29873 /* ForgetPasswordVC.swift in Sources */,
+				E29EBA8229CB826200A74C42 /* WishlistApi.swift in Sources */,
+				E23CE46E29C4E82A00B29873 /* SetNewPasswordVC.swift in Sources */,
+				E2A9FF2929C5FDEA00FCD2F6 /* HomeVC.swift in Sources */,
+				E2A9FF3B29C6106400FCD2F6 /* allProductsCollectioViewCell.swift in Sources */,
+				E25289F529CC72290010FAE8 /* AddWishlistModel.swift in Sources */,
+				E23CE46C29C4E1F800B29873 /* VerifyCodeVC.swift in Sources */,
+				E28D760329C87FEE007D07F9 /* CategoriesDetailsVC.swift in Sources */,
+				E28D760129C87BF5007D07F9 /* ShowAllCateroriesCollectionViewCell.swift in Sources */,
+				E2A9FF3329C6100F00FCD2F6 /* categoriesCollectionVieCell.swift in Sources */,
+				E2E6918929BBEF4000E7B002 /* extentsions.swift in Sources */,
+				E2E6918B29BBF12A00E7B002 /* OnboardingVC.swift in Sources */,
+				E28D761029C8BCDF007D07F9 /* ProfileModel.swift in Sources */,
+				E29EBA7729CB26D100A74C42 /* ProductDetailsModel.swift in Sources */,
+				E2A9FF2D29C5FE0400FCD2F6 /* CartVC.swift in Sources */,
 				E2E6917529BBEB6A00E7B002 /* LazaApp.xcdatamodeld in Sources */,
+				E2A9FF2B29C5FDF900FCD2F6 /* WishlistVC.swift in Sources */,
+				E260641929CA3278005BFFCD /* categoriesDetailsModel.swift in Sources */,
 				E2E6916B29BBEB6A00E7B002 /* AppDelegate.swift in Sources */,
+				E2A9566F29BF439400840DD2 /* SocialMediaRegesterVC.swift in Sources */,
+				E28D760D29C8B9D4007D07F9 /* HomeApi.swift in Sources */,
+				E28D760629C89C6F007D07F9 /* UserRegesterModel.swift in Sources */,
 				E2E6916D29BBEB6A00E7B002 /* SceneDelegate.swift in Sources */,
+				E29EBA8529CB839600A74C42 /* WishlistModel.swift in Sources */,
+				E2776B7D29C772B0001173E7 /* cartCollectionViewCell.swift in Sources */,
+				E2776B7929C742B8001173E7 /* UIViewControllerExtension.swift in Sources */,
+				E29EBA7F29CB2F0C00A74C42 /* ProductDetailsCollectionViewCell.swift in Sources */,
+				E2E6918629BBED6800E7B002 /* SplashScreenVC.swift in Sources */,
+				E260641729CA1BC3005BFFCD /* HomeVCModel.swift in Sources */,
+				E2A9FF2F29C5FE1200FCD2F6 /* WalletsVC.swift in Sources */,
+				E260641529CA08BE005BFFCD /* categoriyModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,9 +700,11 @@
 		};
 		E2E6917F29BBEB6B00E7B002 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CBEB97A1A4E659326C1A537B /* Pods-LazaApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = LazaApp/LazaAppDebug.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = NU3L58K3P3;
@@ -297,8 +713,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -306,14 +722,18 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ahmed.LazaApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		E2E6918029BBEB6B00E7B002 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5F17E2F241B6E9D3506A72B8 /* Pods-LazaApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -325,8 +745,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -334,9 +754,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ahmed.LazaApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
