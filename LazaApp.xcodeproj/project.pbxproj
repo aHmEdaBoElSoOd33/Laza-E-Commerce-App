@@ -12,6 +12,8 @@
 		E23CE46C29C4E1F800B29873 /* VerifyCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23CE46B29C4E1F800B29873 /* VerifyCodeVC.swift */; };
 		E23CE46E29C4E82A00B29873 /* SetNewPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23CE46D29C4E82A00B29873 /* SetNewPasswordVC.swift */; };
 		E25289F529CC72290010FAE8 /* AddWishlistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25289F429CC72290010FAE8 /* AddWishlistModel.swift */; };
+		E25289F929CCA3E40010FAE8 /* CartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25289F829CCA3E40010FAE8 /* CartModel.swift */; };
+		E25289FB29CCA3F30010FAE8 /* CartApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25289FA29CCA3F30010FAE8 /* CartApi.swift */; };
 		E260641329CA0811005BFFCD /* CategoriesApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = E260641229CA0811005BFFCD /* CategoriesApi.swift */; };
 		E260641529CA08BE005BFFCD /* categoriyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E260641429CA08BE005BFFCD /* categoriyModel.swift */; };
 		E260641729CA1BC3005BFFCD /* HomeVCModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E260641629CA1BC3005BFFCD /* HomeVCModel.swift */; };
@@ -65,6 +67,8 @@
 		E23CE46B29C4E1F800B29873 /* VerifyCodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyCodeVC.swift; sourceTree = "<group>"; };
 		E23CE46D29C4E82A00B29873 /* SetNewPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNewPasswordVC.swift; sourceTree = "<group>"; };
 		E25289F429CC72290010FAE8 /* AddWishlistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWishlistModel.swift; sourceTree = "<group>"; };
+		E25289F829CCA3E40010FAE8 /* CartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartModel.swift; sourceTree = "<group>"; };
+		E25289FA29CCA3F30010FAE8 /* CartApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartApi.swift; sourceTree = "<group>"; };
 		E260641229CA0811005BFFCD /* CategoriesApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesApi.swift; sourceTree = "<group>"; };
 		E260641429CA08BE005BFFCD /* categoriyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = categoriyModel.swift; sourceTree = "<group>"; };
 		E260641629CA1BC3005BFFCD /* HomeVCModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVCModel.swift; sourceTree = "<group>"; };
@@ -142,6 +146,22 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		E25289F629CCA35B0010FAE8 /* Cart */ = {
+			isa = PBXGroup;
+			children = (
+				E25289FA29CCA3F30010FAE8 /* CartApi.swift */,
+			);
+			path = Cart;
+			sourceTree = "<group>";
+		};
+		E25289F729CCA3C30010FAE8 /* Cart */ = {
+			isa = PBXGroup;
+			children = (
+				E25289F829CCA3E40010FAE8 /* CartModel.swift */,
+			);
+			path = Cart;
+			sourceTree = "<group>";
+		};
 		E2776B7A29C7728F001173E7 /* cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +184,7 @@
 		E28D760729C89C8D007D07F9 /* Api */ = {
 			isa = PBXGroup;
 			children = (
+				E25289F629CCA35B0010FAE8 /* Cart */,
 				E29EBA8029CB824500A74C42 /* Wishlist */,
 				E28D760B29C8B9C4007D07F9 /* Home */,
 				E28D760829C89C94007D07F9 /* Auth */,
@@ -356,6 +377,7 @@
 		E2E6918129BBEC0700E7B002 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E25289F729CCA3C30010FAE8 /* Cart */,
 				E29EBA8329CB838500A74C42 /* Wishlist */,
 				E28D760E29C8BCC9007D07F9 /* Home */,
 				E28D760429C89C39007D07F9 /* Auth */,
@@ -525,6 +547,7 @@
 				E2A9FF2529C5F97600FCD2F6 /* ContainerVC.swift in Sources */,
 				E28D760A29C89CB2007D07F9 /* RegesterApi.swift in Sources */,
 				E2A9567129BF440700840DD2 /* LoginAndRegerterVC.swift in Sources */,
+				E25289F929CCA3E40010FAE8 /* CartModel.swift in Sources */,
 				E29EBA7929CB27F900A74C42 /* ProductDetailsApi.swift in Sources */,
 				E29EBA7B29CB2B8F00A74C42 /* ProductDetailVC.swift in Sources */,
 				E260641329CA0811005BFFCD /* CategoriesApi.swift in Sources */,
@@ -557,6 +580,7 @@
 				E29EBA7F29CB2F0C00A74C42 /* ProductDetailsCollectionViewCell.swift in Sources */,
 				E2E6918629BBED6800E7B002 /* SplashScreenVC.swift in Sources */,
 				E260641729CA1BC3005BFFCD /* HomeVCModel.swift in Sources */,
+				E25289FB29CCA3F30010FAE8 /* CartApi.swift in Sources */,
 				E2A9FF2F29C5FE1200FCD2F6 /* WalletsVC.swift in Sources */,
 				E260641529CA08BE005BFFCD /* categoriyModel.swift in Sources */,
 			);

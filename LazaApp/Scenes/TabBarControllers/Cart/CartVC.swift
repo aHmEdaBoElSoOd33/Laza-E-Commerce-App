@@ -49,18 +49,14 @@ class CartVC: UIViewController {
     
     
     //MARK: - IBActions
-    
-    @IBAction func addNewPaymentMethodBtn(_ sender: Any) {
-    }
-    
+ 
     @IBAction func backBtn(_ sender: Any) {
-        
         tabBarNavigation(pageindex: 0)
-        
     }
     
     
     @IBAction func addAddressBtn(_ sender: Any) {
+        
     }
     
     

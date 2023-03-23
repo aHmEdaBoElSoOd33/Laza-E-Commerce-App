@@ -22,7 +22,7 @@ class WishlistVC: UIViewController {
     var wishlistApi = WishlistApi()
     var wishlistArray : [WishlistData] = []
     var indicatorView : UIActivityIndicatorView?
-    
+    var hideFavebtn = true
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -69,7 +69,20 @@ class WishlistVC: UIViewController {
     
     //MARK: - IBActions
     
-    @IBAction func editBtn(_ sender: Any) {
+    @IBAction func editBtn(_ sender: UIButton) {
+        
+        if hideFavebtn == true{
+            hideFavebtn = false
+            wishlistCillectionview.reloadData()
+            sender.setTitle("Cancel", for: .normal)
+            sender.setImage(.none, for: .normal)
+        }else{
+            hideFavebtn = true
+            wishlistCillectionview.reloadData()
+            sender.setTitle("Edit", for: .normal)
+            sender.setImage(UIImage(named: "Edit"), for: .normal)
+        }
+        
         
         
     }
@@ -115,6 +128,8 @@ extension WishlistVC : UICollectionViewDelegate , UICollectionViewDataSource,UIC
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: allProductsCollectioViewCell.ID, for: indexPath) as! allProductsCollectioViewCell
+        cell.favBtn.setImage(UIImage(named: "Wishlist")?.withTintColor(.red), for: .normal)
+        cell.favBtn.isHidden = hideFavebtn
         cell.productImage.kf.setImage(with: URL(string: (wishlistArray[indexPath.row].product?.image)!),placeholder: UIImage(named: "Logo")?.withTintColor(UIColor(named: "BackGrpundColor")!))
         cell.productName.text = wishlistArray[indexPath.row].product?.name
         cell.productPrice.text = "\((wishlistArray[indexPath.row].product?.price)!)"

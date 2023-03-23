@@ -42,6 +42,7 @@ class HomeVC: UIViewController {
     var newArrivalArray : [Product] = []
     var indicatorView : UIActivityIndicatorView?
     var newArrivalIndicatorView : UIActivityIndicatorView?
+    var isFav = false
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -50,7 +51,6 @@ class HomeVC: UIViewController {
         profileApi.delegate = self
         wishlistApi.delegate = self
         profileApi.getUserProfileData()
-         
 //        if let user = Auth.auth().currentUser {
 //            userProflleName.text = user.displayName
 //            userProfileImage.kf.setImage(with: user.photoURL)
@@ -292,14 +292,20 @@ extension HomeVC : UICollectionViewDelegate , UICollectionViewDelegateFlowLayout
         switch collectionView{
         case categoriesCollectionView:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: categoriesCollectionVieCell.ID, for: indexPath) as! categoriesCollectionVieCell
-            
             cell.categoryName.text = categoriesArray[indexPath.row].name
-           
             cell.categoryImage.kf.setImage(with: URL(string: categoriesArray[indexPath.row].image!), placeholder:  UIImage(named: "Logo")?.withTintColor(UIColor(named: "BackGrpundColor")!))
             return cell
         default:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: allProductsCollectioViewCell.ID, for: indexPath) as! allProductsCollectioViewCell
             cell.delegate = self
+//            if newArrivalArray.isEmpty {
+//
+//            }else{
+//                if newArrivalArray[indexPath.row].inFavorites! {
+//                    cell.favBtn.setImage(UIImage(named: "Heart")?.withTintColor(.red), for: .normal)
+//                }
+//            } 
+         
             cell.productPrice.text = "\(newArrivalArray[indexPath.row].price!)"
             cell.productName.text = newArrivalArray[indexPath.row].name
             cell.productImage.kf.setImage(with: URL(string: newArrivalArray[indexPath.row].image!),placeholder: UIImage(named: "Logo")?.withTintColor(UIColor(named: "BackGrpundColor")!)) 
