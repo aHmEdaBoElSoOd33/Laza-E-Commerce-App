@@ -50,8 +50,9 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="WIC-Po-dmv" secondAttribute="height" multiplier="1:1" id="Pla-hB-V1a"/>
                                 </constraints>
+                                <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="Wishlist"/>
+                                <state key="normal" image="heart" catalog="system"/>
                                 <connections>
                                     <action selector="addToWishListBtn:" destination="gTV-IL-0wX" eventType="touchUpInside" id="a9D-64-C0b"/>
                                 </connections>
@@ -91,8 +92,8 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="Wishlist" width="21" height="20"/>
         <image name="cellimage" width="864" height="1080"/>
+        <image name="heart" catalog="system" width="128" height="107"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

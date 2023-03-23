@@ -128,7 +128,8 @@ extension WishlistVC : UICollectionViewDelegate , UICollectionViewDataSource,UIC
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: allProductsCollectioViewCell.ID, for: indexPath) as! allProductsCollectioViewCell
-        cell.favBtn.setImage(UIImage(named: "Wishlist")?.withTintColor(.red), for: .normal)
+        cell.favBtn.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+        cell.favBtn.tintColor = .red
         cell.favBtn.isHidden = hideFavebtn
         cell.productImage.kf.setImage(with: URL(string: (wishlistArray[indexPath.row].product?.image)!),placeholder: UIImage(named: "Logo")?.withTintColor(UIColor(named: "BackGrpundColor")!))
         cell.productName.text = wishlistArray[indexPath.row].product?.name

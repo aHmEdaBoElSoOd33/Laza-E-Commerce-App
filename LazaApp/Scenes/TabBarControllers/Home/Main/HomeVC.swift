@@ -45,20 +45,25 @@ class HomeVC: UIViewController {
     var isFav = false
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
-        fetchNewArraivalDataFromApi()
-        fetchCategorisDataFromApi()
-        profileApi.delegate = self
-        wishlistApi.delegate = self
-        profileApi.getUserProfileData()
+   
 //        if let user = Auth.auth().currentUser {
 //            userProflleName.text = user.displayName
 //            userProfileImage.kf.setImage(with: user.photoURL)
 //        } else {
 //            print("User is logged out")
 //        }
-        
+        setupUI()
+        fetchNewArraivalDataFromApi()
+        fetchCategorisDataFromApi()
+        profileApi.delegate = self
+        wishlistApi.delegate = self
+        profileApi.getUserProfileData()
           
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+     
     }
      
     
@@ -133,7 +138,6 @@ class HomeVC: UIViewController {
             self.view.layoutIfNeeded()
         }
         UIView.animate(withDuration: 0.4 ){
-            
             self.sidemenuCoistrain.constant = 0
             self.view.layoutIfNeeded()
         }
@@ -256,6 +260,14 @@ extension HomeVC : UICollectionViewDelegate , UICollectionViewDelegateFlowLayout
         guard let indexPath = self.newArraivalCollectionView.indexPath(for: cell) else { return }
         
         wishlistApi.addproductToFavoriets(id: newArrivalArray[indexPath.row].id!)
+        if cell.favBtn.tintColor == .lightGray {
+            cell.favBtn.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+            cell.favBtn.tintColor = .red
+        }else{
+            cell.favBtn.setImage(UIImage(systemName: "heart"), for: .normal)
+            cell.favBtn.tintColor = .lightGray
+            
+        }
         print("Button tapped on row \(indexPath.row)")
         
     }
@@ -298,13 +310,16 @@ extension HomeVC : UICollectionViewDelegate , UICollectionViewDelegateFlowLayout
         default:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: allProductsCollectioViewCell.ID, for: indexPath) as! allProductsCollectioViewCell
             cell.delegate = self
-//            if newArrivalArray.isEmpty {
-//
-//            }else{
-//                if newArrivalArray[indexPath.row].inFavorites! {
-//                    cell.favBtn.setImage(UIImage(named: "Heart")?.withTintColor(.red), for: .normal)
-//                }
-//            } 
+            cell.favBtn.tintColor = .lightGray
+            if newArrivalArray.isEmpty {
+                cell.favBtn.setImage(UIImage(systemName:  "heart"), for: .normal)
+                cell.favBtn.tintColor = .lightGray
+            }else{
+                if newArrivalArray[indexPath.row].in_favorites! {
+                    cell.favBtn.setImage(UIImage(systemName:  "heart.fill"), for: .normal)
+                    cell.favBtn.tintColor = .red
+                }
+            }
          
             cell.productPrice.text = "\(newArrivalArray[indexPath.row].price!)"
             cell.productName.text = newArrivalArray[indexPath.row].name
