@@ -94,7 +94,7 @@ class ProductDetailVC: UIViewController {
     
     @IBAction func AddOrRemoveProductFromCart(_ sender: Any) {
         
-        cartApi.addproductToCart(id: id!)
+        cartApi.addOrRemoveproductFromCart(id: id!)
         
     }
     

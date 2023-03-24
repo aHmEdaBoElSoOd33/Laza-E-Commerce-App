@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		09C9FEA3F7F32CC5D4064270 /* Pods_LazaApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B071D30A22D02FE49E2F24F9 /* Pods_LazaApp.framework */; };
+		E232514629CDD1F8005C588E /* DeleteFromCartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E232514529CDD1F8005C588E /* DeleteFromCartModel.swift */; };
 		E23CE46A29C4DB6A00B29873 /* ForgetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23CE46929C4DB6A00B29873 /* ForgetPasswordVC.swift */; };
 		E23CE46C29C4E1F800B29873 /* VerifyCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23CE46B29C4E1F800B29873 /* VerifyCodeVC.swift */; };
 		E23CE46E29C4E82A00B29873 /* SetNewPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23CE46D29C4E82A00B29873 /* SetNewPasswordVC.swift */; };
@@ -30,7 +31,6 @@
 		E28D760629C89C6F007D07F9 /* UserRegesterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28D760529C89C6F007D07F9 /* UserRegesterModel.swift */; };
 		E28D760A29C89CB2007D07F9 /* RegesterApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28D760929C89CB2007D07F9 /* RegesterApi.swift */; };
 		E28D760D29C8B9D4007D07F9 /* HomeApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28D760C29C8B9D4007D07F9 /* HomeApi.swift */; };
-		E28D761029C8BCDF007D07F9 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28D760F29C8BCDF007D07F9 /* ProfileModel.swift */; };
 		E29EBA7729CB26D100A74C42 /* ProductDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29EBA7629CB26D100A74C42 /* ProductDetailsModel.swift */; };
 		E29EBA7929CB27F900A74C42 /* ProductDetailsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29EBA7829CB27F900A74C42 /* ProductDetailsApi.swift */; };
 		E29EBA7B29CB2B8F00A74C42 /* ProductDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29EBA7A29CB2B8F00A74C42 /* ProductDetailVC.swift */; };
@@ -43,7 +43,7 @@
 		E2A9FF2929C5FDEA00FCD2F6 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A9FF2829C5FDEA00FCD2F6 /* HomeVC.swift */; };
 		E2A9FF2B29C5FDF900FCD2F6 /* WishlistVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A9FF2A29C5FDF900FCD2F6 /* WishlistVC.swift */; };
 		E2A9FF2D29C5FE0400FCD2F6 /* CartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A9FF2C29C5FE0400FCD2F6 /* CartVC.swift */; };
-		E2A9FF2F29C5FE1200FCD2F6 /* WalletsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A9FF2E29C5FE1200FCD2F6 /* WalletsVC.swift */; };
+		E2A9FF2F29C5FE1200FCD2F6 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A9FF2E29C5FE1200FCD2F6 /* ProfileVC.swift */; };
 		E2A9FF3329C6100F00FCD2F6 /* categoriesCollectionVieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A9FF3129C6100F00FCD2F6 /* categoriesCollectionVieCell.swift */; };
 		E2A9FF3429C6100F00FCD2F6 /* categoriesCollectionVieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2A9FF3229C6100F00FCD2F6 /* categoriesCollectionVieCell.xib */; };
 		E2A9FF3B29C6106400FCD2F6 /* allProductsCollectioViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A9FF3929C6106400FCD2F6 /* allProductsCollectioViewCell.swift */; };
@@ -64,6 +64,7 @@
 		5F17E2F241B6E9D3506A72B8 /* Pods-LazaApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LazaApp.release.xcconfig"; path = "Target Support Files/Pods-LazaApp/Pods-LazaApp.release.xcconfig"; sourceTree = "<group>"; };
 		B071D30A22D02FE49E2F24F9 /* Pods_LazaApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LazaApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBEB97A1A4E659326C1A537B /* Pods-LazaApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LazaApp.debug.xcconfig"; path = "Target Support Files/Pods-LazaApp/Pods-LazaApp.debug.xcconfig"; sourceTree = "<group>"; };
+		E232514529CDD1F8005C588E /* DeleteFromCartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteFromCartModel.swift; sourceTree = "<group>"; };
 		E23CE46929C4DB6A00B29873 /* ForgetPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordVC.swift; sourceTree = "<group>"; };
 		E23CE46B29C4E1F800B29873 /* VerifyCodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyCodeVC.swift; sourceTree = "<group>"; };
 		E23CE46D29C4E82A00B29873 /* SetNewPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNewPasswordVC.swift; sourceTree = "<group>"; };
@@ -86,7 +87,6 @@
 		E28D760529C89C6F007D07F9 /* UserRegesterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegesterModel.swift; sourceTree = "<group>"; };
 		E28D760929C89CB2007D07F9 /* RegesterApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegesterApi.swift; sourceTree = "<group>"; };
 		E28D760C29C8B9D4007D07F9 /* HomeApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeApi.swift; sourceTree = "<group>"; };
-		E28D760F29C8BCDF007D07F9 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 		E29EBA7629CB26D100A74C42 /* ProductDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsModel.swift; sourceTree = "<group>"; };
 		E29EBA7829CB27F900A74C42 /* ProductDetailsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsApi.swift; sourceTree = "<group>"; };
 		E29EBA7A29CB2B8F00A74C42 /* ProductDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailVC.swift; sourceTree = "<group>"; };
@@ -99,7 +99,7 @@
 		E2A9FF2829C5FDEA00FCD2F6 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		E2A9FF2A29C5FDF900FCD2F6 /* WishlistVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistVC.swift; sourceTree = "<group>"; };
 		E2A9FF2C29C5FE0400FCD2F6 /* CartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartVC.swift; sourceTree = "<group>"; };
-		E2A9FF2E29C5FE1200FCD2F6 /* WalletsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletsVC.swift; sourceTree = "<group>"; };
+		E2A9FF2E29C5FE1200FCD2F6 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		E2A9FF3129C6100F00FCD2F6 /* categoriesCollectionVieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = categoriesCollectionVieCell.swift; sourceTree = "<group>"; };
 		E2A9FF3229C6100F00FCD2F6 /* categoriesCollectionVieCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = categoriesCollectionVieCell.xib; sourceTree = "<group>"; };
 		E2A9FF3929C6106400FCD2F6 /* allProductsCollectioViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = allProductsCollectioViewCell.swift; sourceTree = "<group>"; };
@@ -161,6 +161,7 @@
 			children = (
 				E25289F829CCA3E40010FAE8 /* CartModel.swift */,
 				E25289FC29CD11F40010FAE8 /* AddToCartModel.swift */,
+				E232514529CDD1F8005C588E /* DeleteFromCartModel.swift */,
 			);
 			path = Cart;
 			sourceTree = "<group>";
@@ -216,7 +217,6 @@
 		E28D760E29C8BCC9007D07F9 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				E28D760F29C8BCDF007D07F9 /* ProfileModel.swift */,
 				E260641429CA08BE005BFFCD /* categoriyModel.swift */,
 				E260641629CA1BC3005BFFCD /* HomeVCModel.swift */,
 				E260641829CA3278005BFFCD /* categoriesDetailsModel.swift */,
@@ -324,7 +324,7 @@
 		E2A9FF2129C5F8FE00FCD2F6 /* Wallets */ = {
 			isa = PBXGroup;
 			children = (
-				E2A9FF2E29C5FE1200FCD2F6 /* WalletsVC.swift */,
+				E2A9FF2E29C5FE1200FCD2F6 /* ProfileVC.swift */,
 			);
 			path = Wallets;
 			sourceTree = "<group>";
@@ -566,10 +566,10 @@
 				E2A9FF3329C6100F00FCD2F6 /* categoriesCollectionVieCell.swift in Sources */,
 				E2E6918929BBEF4000E7B002 /* extentsions.swift in Sources */,
 				E2E6918B29BBF12A00E7B002 /* OnboardingVC.swift in Sources */,
-				E28D761029C8BCDF007D07F9 /* ProfileModel.swift in Sources */,
 				E29EBA7729CB26D100A74C42 /* ProductDetailsModel.swift in Sources */,
 				E2A9FF2D29C5FE0400FCD2F6 /* CartVC.swift in Sources */,
 				E2E6917529BBEB6A00E7B002 /* LazaApp.xcdatamodeld in Sources */,
+				E232514629CDD1F8005C588E /* DeleteFromCartModel.swift in Sources */,
 				E2A9FF2B29C5FDF900FCD2F6 /* WishlistVC.swift in Sources */,
 				E260641929CA3278005BFFCD /* categoriesDetailsModel.swift in Sources */,
 				E2E6916B29BBEB6A00E7B002 /* AppDelegate.swift in Sources */,
@@ -585,7 +585,7 @@
 				E2E6918629BBED6800E7B002 /* SplashScreenVC.swift in Sources */,
 				E260641729CA1BC3005BFFCD /* HomeVCModel.swift in Sources */,
 				E25289FB29CCA3F30010FAE8 /* CartApi.swift in Sources */,
-				E2A9FF2F29C5FE1200FCD2F6 /* WalletsVC.swift in Sources */,
+				E2A9FF2F29C5FE1200FCD2F6 /* ProfileVC.swift in Sources */,
 				E260641529CA08BE005BFFCD /* categoriyModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

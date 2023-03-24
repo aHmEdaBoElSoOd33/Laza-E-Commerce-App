@@ -48,20 +48,20 @@ Nike Sportswear </string>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8AY-ox-Pob">
-                                <rect key="frame" x="140" y="91.666666666666671" width="10.333333333333343" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8AY-ox-Pob">
+                                <rect key="frame" x="145" y="86.666666666666671" width="7.6666666666666572" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MZw-VT-UMp">
-                                <rect key="frame" x="110" y="92" width="20" height="20"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MZw-VT-UMp">
+                                <rect key="frame" x="115" y="82" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="MZw-VT-UMp" secondAttribute="height" multiplier="1:1" id="ReT-DE-7xm"/>
-                                    <constraint firstAttribute="width" constant="20" id="oNp-Jx-iXP"/>
+                                    <constraint firstAttribute="width" constant="30" id="oNp-Jx-iXP"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="arrow.down"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Button" image="arrow.down"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="15"/>
@@ -71,13 +71,13 @@ Nike Sportswear </string>
                                     <action selector="productCountVtns:" destination="gTV-IL-0wX" eventType="touchUpInside" id="mU0-S3-jnu"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6J2-gg-RyC">
-                                <rect key="frame" x="160.33333333333334" y="92" width="20" height="20"/>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6J2-gg-RyC">
+                                <rect key="frame" x="162.66666666666666" y="82" width="30" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="20" id="jxC-C8-Jtg"/>
+                                    <constraint firstAttribute="width" constant="30" id="jxC-C8-Jtg"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="arrow.up"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Button" image="arrow.up"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="15"/>
@@ -110,14 +110,14 @@ Nike Sportswear </string>
                             <constraint firstItem="6J2-gg-RyC" firstAttribute="width" secondItem="6J2-gg-RyC" secondAttribute="height" multiplier="1:1" id="9ed-Nv-NC2"/>
                             <constraint firstItem="co6-Oy-gxl" firstAttribute="top" secondItem="ika-Ou-AKG" secondAttribute="top" id="CXw-HO-TL0"/>
                             <constraint firstItem="6J2-gg-RyC" firstAttribute="centerY" secondItem="8AY-ox-Pob" secondAttribute="centerY" id="LS1-JI-e91"/>
-                            <constraint firstItem="8AY-ox-Pob" firstAttribute="leading" secondItem="MZw-VT-UMp" secondAttribute="trailing" constant="10" id="Pis-Fy-fpg"/>
+                            <constraint firstItem="8AY-ox-Pob" firstAttribute="leading" secondItem="MZw-VT-UMp" secondAttribute="trailing" id="SWw-Ox-lTF"/>
                             <constraint firstAttribute="trailing" secondItem="JEa-OF-1o3" secondAttribute="trailing" constant="20" id="XGV-DO-NV4"/>
                             <constraint firstItem="co6-Oy-gxl" firstAttribute="leading" secondItem="ika-Ou-AKG" secondAttribute="trailing" constant="20" id="Y6V-NE-j9h"/>
                             <constraint firstItem="ika-Ou-AKG" firstAttribute="leading" secondItem="RZl-Io-LQB" secondAttribute="leading" constant="10" id="dPa-Dg-ih6"/>
                             <constraint firstItem="Ou7-vd-3fm" firstAttribute="top" secondItem="co6-Oy-gxl" secondAttribute="bottom" constant="5" id="dRy-xn-gmi"/>
                             <constraint firstItem="6J2-gg-RyC" firstAttribute="leading" secondItem="8AY-ox-Pob" secondAttribute="trailing" constant="10" id="ekd-4G-lUJ"/>
                             <constraint firstItem="Ou7-vd-3fm" firstAttribute="leading" secondItem="co6-Oy-gxl" secondAttribute="leading" id="gMq-16-3dw"/>
-                            <constraint firstItem="MZw-VT-UMp" firstAttribute="leading" secondItem="Ou7-vd-3fm" secondAttribute="leading" id="gsQ-tp-CYr"/>
+                            <constraint firstItem="MZw-VT-UMp" firstAttribute="leading" secondItem="Ou7-vd-3fm" secondAttribute="leading" constant="5" id="gsQ-tp-CYr"/>
                             <constraint firstItem="8AY-ox-Pob" firstAttribute="centerY" secondItem="MZw-VT-UMp" secondAttribute="centerY" id="kb3-gy-Pkl"/>
                             <constraint firstAttribute="bottom" secondItem="ika-Ou-AKG" secondAttribute="bottom" constant="10" id="sPG-yr-f5B"/>
                             <constraint firstItem="JEa-OF-1o3" firstAttribute="bottom" secondItem="6J2-gg-RyC" secondAttribute="bottom" id="tUy-oI-V2i"/>
@@ -146,7 +146,7 @@ Nike Sportswear </string>
                 <outlet property="productName" destination="co6-Oy-gxl" id="SZk-oo-irm"/>
                 <outlet property="productPrice" destination="Ou7-vd-3fm" id="jpn-0R-0mJ"/>
             </connections>
-            <point key="canvasLocation" x="376" y="26"/>
+            <point key="canvasLocation" x="375.57251908396944" y="25.35211267605634"/>
         </collectionViewCell>
     </objects>
     <resources>

@@ -8,6 +8,8 @@
 import UIKit
 
 class CartVC: UIViewController {
+ 
+    
 
     //MARK: - IBOutlets
     
@@ -35,7 +37,8 @@ class CartVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         
         uiSetUp()
-         getCartDataFromApi()
+        getCartDataFromApi()
+        cartApi.delegate = self
     }
     
     //MARK: - Functions
@@ -57,8 +60,12 @@ class CartVC: UIViewController {
     
     
     func getCartDataFromApi(){
-        cartApi.getFavoriteProducts { data in
-            self.cartArray = data
+        cartApi.getCartProducts { data,subdata  in
+            self.cartArray = data!
+        
+            self.subtotalCostLbl.text = "\((subdata?.sub_total)!)$"
+            self.shippingCostLbl.text = "10$"
+            self.totalCostLbl.text = "\((subdata?.total)! + 10)$"
             self.cartCollectionView.reloadData()
             self.view.isUserInteractionEnabled = true
             self.indicatorView!.stopAnimating()
@@ -85,7 +92,27 @@ class CartVC: UIViewController {
 
 
 
-extension CartVC : UICollectionViewDelegate , UICollectionViewDataSource , UICollectionViewDelegateFlowLayout{
+extension CartVC : UICollectionViewDelegate , UICollectionViewDataSource , UICollectionViewDelegateFlowLayout , CellSubclassCartDelegate, CartApiDelegate{
+    func isDone(message: String) {
+        showALert(message: message)
+        uiSetUp()
+        getCartDataFromApi()
+    }
+    
+    func isFail(message: String) {
+        showALert(message: message)
+        uiSetUp()
+        getCartDataFromApi()
+    }
+    
+    func buttonTapped(cell: cartCollectionViewCell) {
+        guard let indexPath = self.cartCollectionView.indexPath(for: cell) else { return }
+        
+        cartApi.addOrRemoveproductFromCart(id: (cartArray[indexPath.row].product?.id)!)
+        
+        print("Tapped")
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch collectionView{
         case cartCollectionView:
@@ -93,8 +120,6 @@ extension CartVC : UICollectionViewDelegate , UICollectionViewDataSource , UICol
         default:
             return 2
         }
-        
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -107,11 +132,10 @@ extension CartVC : UICollectionViewDelegate , UICollectionViewDataSource , UICol
             cell.layer.shadowOffset = CGSize(width: 0, height: 5)
             cell.layer.shadowRadius = 5
             
-            
+            cell.delegate = self
             cell.productName.text = cartArray[indexPath.row].product?.name
             cell.productImage.kf.setImage(with: URL(string: (cartArray[indexPath.row].product?.image)!))
             cell.productPrice.text = "\((cartArray[indexPath.row].product?.price!)!)"
-            cell.countOfProducts.text = "1"
             return cell
         default:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: addressCollectionViewCell.ID, for: indexPath) as! addressCollectionViewCell

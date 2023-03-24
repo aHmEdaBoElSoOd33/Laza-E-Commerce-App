@@ -25,7 +25,7 @@ class CartApi{
     
     var delegate : CartApiDelegate?
     
-    func getFavoriteProducts(compelation:@escaping([CartItem])->Void){
+    func getCartProducts(compelation:@escaping([CartItem]?,CartData?)->Void){
         
         let header = HTTPHeaders(["lang":"en","Authorization":token!])
         
@@ -34,7 +34,7 @@ class CartApi{
             if res.response?.statusCode == 200 {
                 switch res.result{
                 case .success(let user):
-                    compelation((user.data?.cart_items)!)
+                    compelation((user.data?.cart_items)!, user.data)
                 case .failure(let fail):
                     print(fail.localizedDescription)
                 }
@@ -45,7 +45,7 @@ class CartApi{
     }
     
     
-    func addproductToCart(id: Int){
+    func addOrRemoveproductFromCart(id: Int){
         
         let addToCartUrl = RegisterApi.BASE_URL + "carts"
         let header = HTTPHeaders(["lang":"en","Authorization":token!])
@@ -64,8 +64,21 @@ class CartApi{
             }else{
                 print("not 200")
             }
-            
         }
+    }
+    func changeQuantityOfProductInCart(id:Int,quantity:Int){
+        let addToCartUrl = RegisterApi.BASE_URL + "carts/\(id)"
+        let header = HTTPHeaders(["lang":"en","Authorization":token!])
+        let params = ["quantity":quantity]
+        
+        
+        
+        
+        
+        
+        
+        
         
     }
+    
 }

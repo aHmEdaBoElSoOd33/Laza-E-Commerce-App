@@ -17,8 +17,7 @@ class HomeVC: UIViewController {
     
 
     //MARK: - IBOutlets
-    
-    
+     
     @IBOutlet weak var blurView: UIVisualEffectView!
     @IBOutlet weak var numberOfOrders: UILabel!
     @IBOutlet weak var blureViewsideMenuConstrain: NSLayoutConstraint!
@@ -42,7 +41,8 @@ class HomeVC: UIViewController {
     var newArrivalArray : [Product] = []
     var indicatorView : UIActivityIndicatorView?
     var newArrivalIndicatorView : UIActivityIndicatorView?
-    var isFav = false
+    var cartApi = CartApi()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
    
@@ -72,15 +72,16 @@ class HomeVC: UIViewController {
         newArrivalApi.getHomeData { data in
             self.newArrivalArray = data
             self.newArraivalCollectionView.reloadData()
+            self.getNumberOfOrdersSideMenu()
             self.view.isUserInteractionEnabled = true
             self.newArrivalIndicatorView!.stopAnimating()
+            
         }
         
     }
      
     
     func fetchCategorisDataFromApi(){
-        
         categoriesApi.getCategories { data in
             self.categoriesArray = data
             print(self.categoriesArray.first?.name)
@@ -88,8 +89,6 @@ class HomeVC: UIViewController {
             self.indicatorView?.stopAnimating()
             self.view.isUserInteractionEnabled = false
         }
-        
-        
     }
     
      
@@ -98,7 +97,17 @@ class HomeVC: UIViewController {
         userProfileImage.kf.setImage(with: URL(string: userdata.image!))
     }
     
-    
+    func getNumberOfOrdersSideMenu(){
+        
+        cartApi.getCartProducts { data, subdata in
+            
+            if data!.count <= 1{
+                self.numberOfOrders.text = "\((data?.count)!) Order"
+            }else{
+                self.numberOfOrders.text = "\((data?.count)!) Orders"
+            }
+        }
+    }
     
     func setupUI(){
         self.view.isUserInteractionEnabled = false
@@ -230,7 +239,7 @@ class HomeVC: UIViewController {
 //
 //        self.dismiss(animated: false)
         
-        UserDefaults.standard.set("", forKey: "userToken")
+        UserDefaults.standard.set(nil, forKey: "userToken")
         profileApi.LogoutfromDataBase()
     }
 }

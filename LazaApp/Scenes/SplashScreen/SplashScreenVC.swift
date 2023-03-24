@@ -16,7 +16,7 @@ class SplashScreenVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //UserDefaults.standard.set("", forKey: "userToken")
+      
         print(UserDefaults.standard.string(forKey: "userToken"))
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2 ){

@@ -15,7 +15,7 @@ struct Cart : Decodable {
 // MARK: - DataClass
 struct CartData: Decodable {
     let cart_items: [CartItem]?
-    let subTotal, total: Double?
+    let sub_total, total: Double?
 }
 
 // MARK: - CartItem
