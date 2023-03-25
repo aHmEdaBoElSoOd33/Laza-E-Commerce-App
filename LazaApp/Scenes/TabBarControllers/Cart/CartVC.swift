@@ -8,9 +8,9 @@
 import UIKit
 
 class CartVC: UIViewController {
- 
     
-
+    
+    
     //MARK: - IBOutlets
     
     @IBOutlet weak var cartCollectionView: UICollectionView!
@@ -18,26 +18,27 @@ class CartVC: UIViewController {
     @IBOutlet weak var subtotalCostLbl: UILabel!
     @IBOutlet weak var totalCostLbl: UILabel!
     @IBOutlet weak var shippingCostLbl: UILabel!
-  
+    
     
     
     //MARK: - Variables
-     
+    
     static let ID = String(describing: CartVC.self)
     var cartApi = CartApi()
     var cartArray : [CartItem] = []
+    var addressArray : [AddressDetailsData] = []
     var indicatorView : UIActivityIndicatorView?
-    
+    var addressApi  = AddressApi()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-    }
-     
-    override func viewWillAppear(_ animated: Bool) {
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         uiSetUp()
         getCartDataFromApi()
+        getAddressDatFromApi()
         cartApi.delegate = self
     }
     
@@ -45,24 +46,23 @@ class CartVC: UIViewController {
     
     func uiSetUp(){
         indicatorView = self.activityIndicator(style: .large,
-                                                       center: self.view.center)
-        self.view.addSubview(indicatorView!) 
+                                               center: self.view.center)
+        self.view.addSubview(indicatorView!)
         cartCollectionView.delegate = self
         cartCollectionView.dataSource = self
         addressCollectionView.dataSource = self
-        addressCollectionView.dataSource = self
+        addressCollectionView.delegate = self
         setupCell(collectionView: cartCollectionView, ID: cartCollectionViewCell.ID)
         setupCell(collectionView: addressCollectionView, ID: addressCollectionViewCell.ID)
         
-          self.view.isUserInteractionEnabled = false
-          self.indicatorView!.startAnimating()
+        self.view.isUserInteractionEnabled = false
+        self.indicatorView!.startAnimating()
     }
     
     
     func getCartDataFromApi(){
         cartApi.getCartProducts { data,subdata  in
             self.cartArray = data!
-        
             self.subtotalCostLbl.text = "\((subdata?.sub_total)!)$"
             self.shippingCostLbl.text = "10$"
             self.totalCostLbl.text = "\((subdata?.total)! + 10)$"
@@ -73,17 +73,26 @@ class CartVC: UIViewController {
     }
     
     
+    func getAddressDatFromApi(){
+        addressApi.getAddressData { data in
+            self.addressArray = data
+            self.addressCollectionView.reloadData()
+        }
+    }
+    
     //MARK: - IBActions
- 
+    
     @IBAction func backBtn(_ sender: Any) {
         tabBarNavigation(pageindex: 0)
     }
     
     
     @IBAction func addAddressBtn(_ sender: Any) {
-        
-        
-        
+        let vc = storyboard?.instantiateViewController(withIdentifier: AddressVC.ID) as! AddressVC
+        vc.state = "add"
+        vc.modalTransitionStyle = .crossDissolve
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
     }
     
     
@@ -118,7 +127,7 @@ extension CartVC : UICollectionViewDelegate , UICollectionViewDataSource , UICol
         case cartCollectionView:
             return cartArray.count
         default:
-            return 2
+            return addressArray.count
         }
     }
     
@@ -139,6 +148,9 @@ extension CartVC : UICollectionViewDelegate , UICollectionViewDataSource , UICol
             return cell
         default:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: addressCollectionViewCell.ID, for: indexPath) as! addressCollectionViewCell
+            
+            cell.AddressNameLbl.text = addressArray[indexPath.row].name! + "," + addressArray[indexPath.row].city!
+            cell.countryLbl.text = addressArray[indexPath.row].region
             return cell
         }
         
@@ -151,8 +163,11 @@ extension CartVC : UICollectionViewDelegate , UICollectionViewDataSource , UICol
         switch collectionView{
         case cartCollectionView:
             return CGSize(width: collectionView.bounds.width - 10, height: collectionView.bounds.height / 2 - 10 )
-        default:
+        
+        case addressCollectionView:
             return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
+        default:
+            return .zero
         }
     }
     
@@ -166,8 +181,44 @@ extension CartVC : UICollectionViewDelegate , UICollectionViewDataSource , UICol
             vc.modalTransitionStyle = .crossDissolve
             vc.modalPresentationStyle = .fullScreen
             present(vc, animated: true)
+        case addressCollectionView:
+            let vc = storyboard?.instantiateViewController(withIdentifier: AddressVC.ID) as! AddressVC
+            vc.state = "update"
+            vc.modalTransitionStyle = .crossDissolve
+            vc.modalPresentationStyle = .fullScreen
+            present(vc, animated: true)
         default:
             break
         }
     }
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        var numOfSections: Int = 0
+        
+        switch collectionView{
+        case cartCollectionView:
+            if cartArray.count != 0
+            {
+                //collectionView.separatorStyle = .singleLine
+                numOfSections            = 1
+                collectionView.backgroundView = nil
+            }
+            else
+            {
+                
+                let noDataLabel: UILabel  = UILabel(frame: CGRect(x: 0, y: 0, width: collectionView.bounds.size.width, height: collectionView.bounds.size.height))
+                noDataLabel.text = "No items in cart yet"
+                noDataLabel.font = .boldSystemFont(ofSize: 20)
+                noDataLabel.textColor     = UIColor.lightGray
+                noDataLabel.textAlignment = .center
+                collectionView.backgroundView  = noDataLabel
+                //collectionView.separatorStyle  = .none
+            }
+            return numOfSections
+        default:
+            return 1
+        }
+        
+    }
+    
 }

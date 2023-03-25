@@ -26,5 +26,5 @@ struct categoryDetails: Decodable {
     let image: String?
     let name, description: String?
     let images: [String]?
-    let in_favorites, in_cart: Bool?
+    let in_favorites, in_cart: Bool
 }

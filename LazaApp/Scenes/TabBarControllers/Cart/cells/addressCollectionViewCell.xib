@@ -35,7 +35,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sylhet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xuo-tr-oVB">
-                                <rect key="frame" x="70" y="59.333333333333336" width="38" height="15.666666666666664"/>
+                                <rect key="frame" x="70" y="49.333333333333336" width="38" height="15.666666666666664"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -82,7 +82,7 @@
                             <constraint firstItem="hHp-CN-pFG" firstAttribute="leading" secondItem="kZR-CB-de9" secondAttribute="leading" id="9b5-lD-CVF"/>
                             <constraint firstItem="q7y-UM-9fh" firstAttribute="top" secondItem="hHp-CN-pFG" secondAttribute="top" id="NYw-7f-gon"/>
                             <constraint firstItem="Vof-Pq-rBc" firstAttribute="centerX" secondItem="hHp-CN-pFG" secondAttribute="centerX" id="OQQ-vE-rbZ"/>
-                            <constraint firstItem="Xuo-tr-oVB" firstAttribute="bottom" secondItem="hHp-CN-pFG" secondAttribute="bottom" id="SQn-pv-UdM"/>
+                            <constraint firstItem="Xuo-tr-oVB" firstAttribute="bottom" secondItem="hHp-CN-pFG" secondAttribute="bottom" constant="-10" id="SQn-pv-UdM"/>
                             <constraint firstItem="fUs-Fw-hNv" firstAttribute="centerY" secondItem="Vof-Pq-rBc" secondAttribute="centerY" id="YKw-hU-mtX"/>
                             <constraint firstAttribute="trailing" secondItem="VIf-wf-BWX" secondAttribute="trailing" constant="5" id="cSG-gB-Pa9"/>
                             <constraint firstItem="q7y-UM-9fh" firstAttribute="leading" secondItem="hHp-CN-pFG" secondAttribute="trailing" constant="20" id="pjg-lQ-e9t"/>

@@ -150,4 +150,28 @@ extension WishlistVC : UICollectionViewDelegate , UICollectionViewDataSource,UIC
         present(vc, animated: true)
     }
     
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        
+            var numOfSections: Int = 0
+            if wishlistArray.count != 0
+            {
+                //collectionView.separatorStyle = .singleLine
+                numOfSections            = 1
+                collectionView.backgroundView = nil
+            }
+            else
+            {
+                
+                let noDataLabel: UILabel  = UILabel(frame: CGRect(x: 0, y: 0, width: collectionView.bounds.size.width, height: collectionView.bounds.size.height))
+                noDataLabel.text = "No items in wishlist yet"
+                noDataLabel.font = .boldSystemFont(ofSize: 25)
+                noDataLabel.textColor     = UIColor.lightGray
+                noDataLabel.textAlignment = .center
+                collectionView.backgroundView  = noDataLabel
+                //collectionView.separatorStyle  = .none
+            }
+            return numOfSections
+    }
+    
 }

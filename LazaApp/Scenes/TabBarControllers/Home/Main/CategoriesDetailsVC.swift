@@ -8,8 +8,8 @@
 import UIKit
 
 class CategoriesDetailsVC: UIViewController{
- 
-
+    
+    
     @IBOutlet weak var numberOfItems: UILabel!
     @IBOutlet weak var categoryName: UILabel!
     @IBOutlet weak var categoriesProductsCollectionView: UICollectionView!
@@ -25,7 +25,7 @@ class CategoriesDetailsVC: UIViewController{
     var indicatorView : UIActivityIndicatorView?
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -50,14 +50,14 @@ class CategoriesDetailsVC: UIViewController{
     func uiSetUp() {
         self.view.isUserInteractionEnabled = false
         indicatorView = self.activityIndicator(style: .large,
-                                                       center: self.view.center)
+                                               center: self.view.center)
         self.view.addSubview(indicatorView!)
-         
+        
         indicatorView!.startAnimating()
         categoryName.text = categoryTitle
         categoriesProductsCollectionView.delegate = self
         categoriesProductsCollectionView.dataSource = self
-         
+        
         setupCell(collectionView: categoriesProductsCollectionView, ID: allProductsCollectioViewCell.ID)
     }
     
@@ -76,28 +76,19 @@ class CategoriesDetailsVC: UIViewController{
     
 }
 
-
-
+ 
 extension CategoriesDetailsVC : UICollectionViewDelegate , UICollectionViewDataSource , UICollectionViewDelegateFlowLayout , WishlistApiDelegate , CellSubclassProductDelegate {
-   
+    
     
     func buttonTapped(cell: allProductsCollectioViewCell) {
         guard let indexPath = self.categoriesProductsCollectionView.indexPath(for: cell) else { return }
         
         wishlistApi.addproductToFavoriets(id: categoryProuductsArray[indexPath.row].id!)
-       
-        if cell.favBtn.tintColor == .lightGray {
-            cell.favBtn.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-            cell.favBtn.tintColor = .red
-        }else{
-            cell.favBtn.setImage(UIImage(systemName: "heart"), for: .normal)
-            cell.favBtn.tintColor = .lightGray
-            
-        }
+          
         print("Button tapped on row \(indexPath.row)")
     }
     
-     
+    
     func isDone(message: String) {
         showALert(message: message)
     }
@@ -105,7 +96,7 @@ extension CategoriesDetailsVC : UICollectionViewDelegate , UICollectionViewDataS
     func isFail(message: String) {
         showALert(message: message)
     }
-      
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return categoryProuductsArray.count
     }
@@ -113,22 +104,21 @@ extension CategoriesDetailsVC : UICollectionViewDelegate , UICollectionViewDataS
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: allProductsCollectioViewCell.ID, for: indexPath) as! allProductsCollectioViewCell
         cell.delegate = self
-        if categoryProuductsArray.isEmpty {
+        
+        
+        if categoryProuductsArray[indexPath.row].in_favorites {
+            cell.favBtn.setImage(UIImage(systemName:  "heart.fill"), for: .normal)
+            cell.favBtn.tintColor = .red
+        }else{
             cell.favBtn.setImage(UIImage(systemName:  "heart"), for: .normal)
             cell.favBtn.tintColor = .lightGray
-        }else{
-            if categoryProuductsArray[indexPath.row].in_favorites! {
-                cell.favBtn.setImage(UIImage(systemName:  "heart.fill"), for: .normal)
-                cell.favBtn.tintColor = .red
-            }else{
-                cell.favBtn.setImage(UIImage(systemName:  "heart"), for: .normal)
-                cell.favBtn.tintColor = .lightGray
-            }
         }
+        
+        
         cell.productImage.kf.setImage(with: URL(string: categoryProuductsArray[indexPath.row].image!),placeholder: UIImage(named: "Logo")?.withTintColor(UIColor(named: "BackGrpundColor")!))
         cell.productName.text = categoryProuductsArray[indexPath.row].name
         cell.productPrice.text = "\(categoryProuductsArray[indexPath.row].price!)"
-         
+        
         return cell
     }
     
@@ -138,9 +128,9 @@ extension CategoriesDetailsVC : UICollectionViewDelegate , UICollectionViewDataS
         return CGSize(width: collectionView
             .bounds.width / 2 - 15, height: 260 )
     }
-      
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-         
+        
         let vc = storyboard?.instantiateViewController(withIdentifier: ProductDetailVC.ID) as! ProductDetailVC
         vc.id = categoryProuductsArray[indexPath.row].id
         vc.productinCart = categoryProuductsArray[indexPath.row].in_cart

@@ -76,20 +76,18 @@ class HomeApi{
     
     let homeUrl = RegisterApi.BASE_URL + "home"
     
-    func getHomeData(completion:@escaping([Product])->Void){
+    func getHomeData(completion:@escaping([Product]?,Error?)->Void){
         
         let header = HTTPHeaders(["lang":"en","Authorization":token!])
         
         AF.request(homeUrl, method: .get,headers: header ).responseDecodable(of: HomeVCModel.self ){ res in
             
-            
-            
           if res.response?.statusCode == 200 {
                 switch res.result { 
                 case .success(let user):
-                    completion((user.data?.products)!)
+                    completion((user.data?.products)!, nil)
                 case .failure(let fail):
-                    print(fail.localizedDescription)
+                    completion(nil, fail)
                 }
             }else{
                 

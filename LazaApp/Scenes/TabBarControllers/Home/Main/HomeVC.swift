@@ -15,9 +15,9 @@ import Kingfisher
 
 class HomeVC: UIViewController {
     
-
+    
     //MARK: - IBOutlets
-     
+    
     @IBOutlet weak var blurView: UIVisualEffectView!
     @IBOutlet weak var numberOfOrders: UILabel!
     @IBOutlet weak var blureViewsideMenuConstrain: NSLayoutConstraint!
@@ -27,7 +27,7 @@ class HomeVC: UIViewController {
     @IBOutlet weak var newArraivalCollectionView: UICollectionView!
     @IBOutlet weak var userProfileImage: UIImageView!
     @IBOutlet weak var userProflleName: UILabel!
-      
+    
     //MARK: - Variables
     
     
@@ -39,24 +39,31 @@ class HomeVC: UIViewController {
     let wishlistApi = WishlistApi()
     var categoriesArray : [Datum] = []
     var newArrivalArray : [Product] = []
-    var indicatorView : UIActivityIndicatorView?
-    var newArrivalIndicatorView : UIActivityIndicatorView?
+    lazy var indicatorView : UIActivityIndicatorView = { self.activityIndicator(style: .large,center: self.view.center)
+    }()
+    lazy var newArrivalIndicatorView : UIActivityIndicatorView = { self.activityIndicator(style: .large,center: self.view.center)
+    }()
     var cartApi = CartApi()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-   
-//        if let user = Auth.auth().currentUser {
-//            userProflleName.text = user.displayName
-//            userProfileImage.kf.setImage(with: user.photoURL)
-//        } else {
-//            print("User is logged out")
-//        }
-          
+        
+        //        if let user = Auth.auth().currentUser {
+        //            userProflleName.text = user.displayName
+        //            userProfileImage.kf.setImage(with: user.photoURL)
+        //        } else {
+        //            print("User is logged out")
+        //        }
+        
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
+        newArrivalArray.removeAll()
+        categoriesArray.removeAll()
+        
+        newArraivalCollectionView.reloadData()
+        categoriesCollectionView.reloadData()
         setupUI()
         fetchNewArraivalDataFromApi()
         fetchCategorisDataFromApi()
@@ -64,41 +71,54 @@ class HomeVC: UIViewController {
         wishlistApi.delegate = self
         profileApi.getUserProfileData()
     }
-     
+    
     
     //MARK: - Functions
     
     func fetchNewArraivalDataFromApi(){
-        newArrivalApi.getHomeData { data in
-            self.newArrivalArray = data
-            self.newArraivalCollectionView.reloadData()
-            self.getNumberOfOrdersSideMenu()
-            self.view.isUserInteractionEnabled = true
-            self.newArrivalIndicatorView!.stopAnimating()
-            
-        }
         
+        newArrivalApi.getHomeData { data,error  in
+            
+            self.view.isUserInteractionEnabled = true
+            self.newArrivalIndicatorView.stopAnimating()
+            
+            if let data = data {
+                self.newArrivalArray = data
+                self.newArraivalCollectionView.reloadData()
+                self.getNumberOfOrdersSideMenu()
+                
+            }else if let error = error {
+                
+                self.showALert(message: error.localizedDescription )
+            }
+        }
     }
-     
+    
     
     func fetchCategorisDataFromApi(){
-        categoriesApi.getCategories { data in
-            self.categoriesArray = data
-            print(self.categoriesArray.first?.name)
-            self.categoriesCollectionView.reloadData()
-            self.indicatorView?.stopAnimating()
-            self.view.isUserInteractionEnabled = false
+        
+        self.indicatorView.stopAnimating()
+        
+        categoriesApi.getCategories { data,error  in
+            if let data = data {
+                self.categoriesArray = data
+                print(self.categoriesArray.first?.name)
+                self.categoriesCollectionView.reloadData()
+            }else if let error = error{
+                self.showALert(message: error.localizedDescription)
+            }
+            
+            
         }
     }
     
-     
+    
     func setUpUIwithData(with userdata: DataClass){
         userProflleName.text = userdata.name
         userProfileImage.kf.setImage(with: URL(string: userdata.image!))
     }
     
     func getNumberOfOrdersSideMenu(){
-        
         cartApi.getCartProducts { data, subdata in
             
             if data!.count <= 1{
@@ -111,14 +131,10 @@ class HomeVC: UIViewController {
     
     func setupUI(){
         self.view.isUserInteractionEnabled = false
-        indicatorView = self.activityIndicator(style: .large,
-                                                       center: self.view.center)
-        newArrivalIndicatorView =  self.activityIndicator(style: .large,
-                                                          center: self.view.center)
-        self.view.addSubview(indicatorView!)
-        self.view.addSubview(newArrivalIndicatorView!)
-        indicatorView!.startAnimating()
-        newArrivalIndicatorView?.startAnimating()
+        self.view.addSubview(indicatorView)
+        self.view.addSubview(newArrivalIndicatorView)
+        indicatorView.startAnimating()
+        newArrivalIndicatorView.startAnimating()
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.tapHandler))
         blurView.addGestureRecognizer(tap)
         categoriesCollectionView.delegate = self
@@ -127,7 +143,7 @@ class HomeVC: UIViewController {
         newArraivalCollectionView.dataSource = self
         setupCell(collectionView: categoriesCollectionView, ID: categoriesCollectionVieCell.ID)
         setupCell(collectionView: newArraivalCollectionView, ID: allProductsCollectioViewCell.ID)
-         
+        
         
     }
     
@@ -158,7 +174,7 @@ class HomeVC: UIViewController {
     
     
     @IBAction func viewAllProducts(_ sender: Any) {
-          
+        
     }
     
     
@@ -167,8 +183,8 @@ class HomeVC: UIViewController {
         tabBarController?.tabBar.isHidden = true
         
         UIView.animate(withDuration: 0.2 ){
-         
-                self.blureViewsideMenuConstrain.constant = self.view.frame.width
+            
+            self.blureViewsideMenuConstrain.constant = self.view.frame.width
             self.view.layoutIfNeeded()
         }
         
@@ -196,48 +212,48 @@ class HomeVC: UIViewController {
     
     
     @IBAction func cartBtn(_ sender: Any) {
-       tabBarNavigation(pageindex: 2) 
+        tabBarNavigation(pageindex: 2)
     }
-     
+    
     
     @IBAction func speechBtn(_ sender: Any) {
         
     }
-     
+    
     //MARK: - Side Menu
-      
+    
     @IBAction func accountInfoBtn(_ sender: Any) {
     }
     
     @IBAction func passwordSettingsBtn(_ sender: Any) {
-          
+        
     }
     @IBAction func ordersBtn(_ sender: Any) {
-         
+        
     }
     
     @IBAction func myCardsBtn(_ sender: Any) {
-         
+        
     }
     @IBAction func wishListBtn(_ sender: Any) {
-         
+        
     }
     @IBAction func settengsBtn(_ sender: Any) {
-         
+        
     }
     @IBAction func logoutBtn(_ sender: Any) {
-//        let loginManager = LoginManager()
-//           loginManager.logOut()
-//           do {
-//               try Auth.auth().signOut()
-//
-//               print("User Loged Out")
-//
-//           } catch let signOutError as NSError {
-//               print("Error signing out: %@", signOutError)
-//           }
-//
-//        self.dismiss(animated: false)
+        //        let loginManager = LoginManager()
+        //           loginManager.logOut()
+        //           do {
+        //               try Auth.auth().signOut()
+        //
+        //               print("User Loged Out")
+        //
+        //           } catch let signOutError as NSError {
+        //               print("Error signing out: %@", signOutError)
+        //           }
+        //
+        //        self.dismiss(animated: false)
         
         UserDefaults.standard.set(nil, forKey: "userToken")
         profileApi.LogoutfromDataBase()
@@ -261,6 +277,8 @@ extension HomeVC : UICollectionViewDelegate , UICollectionViewDelegateFlowLayout
         guard let indexPath = self.newArraivalCollectionView.indexPath(for: cell) else { return }
         
         wishlistApi.addproductToFavoriets(id: newArrivalArray[indexPath.row].id!)
+        
+        
         if cell.favBtn.tintColor == .lightGray {
             cell.favBtn.setImage(UIImage(systemName: "heart.fill"), for: .normal)
             cell.favBtn.tintColor = .red
@@ -269,6 +287,8 @@ extension HomeVC : UICollectionViewDelegate , UICollectionViewDelegateFlowLayout
             cell.favBtn.tintColor = .lightGray
             
         }
+        
+        
         print("Button tapped on row \(indexPath.row)")
         
     }
@@ -301,7 +321,7 @@ extension HomeVC : UICollectionViewDelegate , UICollectionViewDelegateFlowLayout
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-          
+        
         switch collectionView{
         case categoriesCollectionView:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: categoriesCollectionVieCell.ID, for: indexPath) as! categoriesCollectionVieCell
@@ -312,22 +332,18 @@ extension HomeVC : UICollectionViewDelegate , UICollectionViewDelegateFlowLayout
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: allProductsCollectioViewCell.ID, for: indexPath) as! allProductsCollectioViewCell
             cell.delegate = self
             cell.favBtn.tintColor = .lightGray
-            if newArrivalArray.isEmpty {
+             
+            if newArrivalArray[indexPath.row].in_favorites! {
+                cell.favBtn.setImage(UIImage(systemName:  "heart.fill"), for: .normal)
+                cell.favBtn.tintColor = .red
+            }else{
                 cell.favBtn.setImage(UIImage(systemName:  "heart"), for: .normal)
                 cell.favBtn.tintColor = .lightGray
-            }else{
-                if newArrivalArray[indexPath.row].in_favorites! {
-                    cell.favBtn.setImage(UIImage(systemName:  "heart.fill"), for: .normal)
-                    cell.favBtn.tintColor = .red
-                }else{
-                    cell.favBtn.setImage(UIImage(systemName:  "heart"), for: .normal)
-                    cell.favBtn.tintColor = .lightGray
-                }
             }
-         
+            
             cell.productPrice.text = "\(newArrivalArray[indexPath.row].price!)"
             cell.productName.text = newArrivalArray[indexPath.row].name
-            cell.productImage.kf.setImage(with: URL(string: newArrivalArray[indexPath.row].image!),placeholder: UIImage(named: "Logo")?.withTintColor(UIColor(named: "BackGrpundColor")!)) 
+            cell.productImage.kf.setImage(with: URL(string: newArrivalArray[indexPath.row].image!),placeholder: UIImage(named: "Logo")?.withTintColor(UIColor(named: "BackGrpundColor")!))
             return cell
         }
     }
@@ -353,7 +369,7 @@ extension HomeVC : UICollectionViewDelegate , UICollectionViewDelegateFlowLayout
             vc.modalTransitionStyle = .crossDissolve
             vc.modalPresentationStyle = .fullScreen
             present(vc, animated: true)
-        default: 
+        default:
             let vc = storyboard?.instantiateViewController(withIdentifier: ProductDetailVC.ID) as! ProductDetailVC
             vc.id = newArrivalArray[indexPath.row].id
             vc.productinCart = newArrivalArray[indexPath.row].in_cart
@@ -362,6 +378,6 @@ extension HomeVC : UICollectionViewDelegate , UICollectionViewDelegateFlowLayout
             present(vc, animated: true)
         }
     }
-
+    
     
 }

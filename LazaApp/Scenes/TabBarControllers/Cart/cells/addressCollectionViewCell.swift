@@ -8,8 +8,7 @@
 import UIKit
 
 class addressCollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var countryLbl: UILabel!
-    
+    @IBOutlet weak var countryLbl: UILabel! 
     @IBOutlet weak var AddressNameLbl: UILabel!
     static let ID = String(describing: addressCollectionViewCell.self)
      

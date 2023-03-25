@@ -14,9 +14,9 @@ import Alamofire
 class CategoriesApi{
     
     let categoreiesURL = RegisterApi.BASE_URL+"categories"
+    let token = UserDefaults.standard.string(forKey: "userToken")
     
-    
-    func getCategories(completion: @escaping([Datum])->Void){
+    func getCategories(completion: @escaping([Datum]?, Error?)->Void){
         
         let header = HTTPHeaders(["lang":"en"])
         
@@ -27,9 +27,9 @@ class CategoriesApi{
                 switch res.result {
                     
                 case .success(let user):
-                    completion((user.data?.data)!)
+                    completion((user.data?.data)!, nil)
                 case .failure(let fail):
-                    print(fail.localizedDescription)
+                    completion(nil, fail)
                 } 
             }else {
                 
@@ -47,7 +47,7 @@ class CategoriesApi{
         
         
         let categouriesDetailUrl = RegisterApi.BASE_URL+"categories/\(id)"
-        let header = HTTPHeaders(["lang":"en"])
+        let header = HTTPHeaders(["lang":"en","Authorization":token!])
         
         AF.request(categouriesDetailUrl, method: .get ,headers: header).responseDecodable(of: AllcategoriesDetails.self ){res in
             

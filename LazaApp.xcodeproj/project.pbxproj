@@ -16,6 +16,9 @@
 		E25289F929CCA3E40010FAE8 /* CartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25289F829CCA3E40010FAE8 /* CartModel.swift */; };
 		E25289FB29CCA3F30010FAE8 /* CartApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25289FA29CCA3F30010FAE8 /* CartApi.swift */; };
 		E25289FD29CD11F40010FAE8 /* AddToCartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25289FC29CD11F40010FAE8 /* AddToCartModel.swift */; };
+		E25C371329CF253E0002F729 /* AddressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25C371229CF253E0002F729 /* AddressVC.swift */; };
+		E25C371529CF30F80002F729 /* AddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25C371429CF30F80002F729 /* AddressModel.swift */; };
+		E25C371729CF31990002F729 /* AddressApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25C371629CF31990002F729 /* AddressApi.swift */; };
 		E260641329CA0811005BFFCD /* CategoriesApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = E260641229CA0811005BFFCD /* CategoriesApi.swift */; };
 		E260641529CA08BE005BFFCD /* categoriyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E260641429CA08BE005BFFCD /* categoriyModel.swift */; };
 		E260641729CA1BC3005BFFCD /* HomeVCModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E260641629CA1BC3005BFFCD /* HomeVCModel.swift */; };
@@ -72,6 +75,9 @@
 		E25289F829CCA3E40010FAE8 /* CartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartModel.swift; sourceTree = "<group>"; };
 		E25289FA29CCA3F30010FAE8 /* CartApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartApi.swift; sourceTree = "<group>"; };
 		E25289FC29CD11F40010FAE8 /* AddToCartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToCartModel.swift; sourceTree = "<group>"; };
+		E25C371229CF253E0002F729 /* AddressVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressVC.swift; sourceTree = "<group>"; };
+		E25C371429CF30F80002F729 /* AddressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressModel.swift; sourceTree = "<group>"; };
+		E25C371629CF31990002F729 /* AddressApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressApi.swift; sourceTree = "<group>"; };
 		E260641229CA0811005BFFCD /* CategoriesApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesApi.swift; sourceTree = "<group>"; };
 		E260641429CA08BE005BFFCD /* categoriyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = categoriyModel.swift; sourceTree = "<group>"; };
 		E260641629CA1BC3005BFFCD /* HomeVCModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVCModel.swift; sourceTree = "<group>"; };
@@ -152,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				E25289FA29CCA3F30010FAE8 /* CartApi.swift */,
+				E25C371629CF31990002F729 /* AddressApi.swift */,
 			);
 			path = Cart;
 			sourceTree = "<group>";
@@ -162,8 +169,17 @@
 				E25289F829CCA3E40010FAE8 /* CartModel.swift */,
 				E25289FC29CD11F40010FAE8 /* AddToCartModel.swift */,
 				E232514529CDD1F8005C588E /* DeleteFromCartModel.swift */,
+				E25C371429CF30F80002F729 /* AddressModel.swift */,
 			);
 			path = Cart;
+			sourceTree = "<group>";
+		};
+		E25C371129CF25140002F729 /* Address */ = {
+			isa = PBXGroup;
+			children = (
+				E25C371229CF253E0002F729 /* AddressVC.swift */,
+			);
+			path = Address;
 			sourceTree = "<group>";
 		};
 		E2776B7A29C7728F001173E7 /* cells */ = {
@@ -316,6 +332,7 @@
 			isa = PBXGroup;
 			children = (
 				E2A9FF2C29C5FE0400FCD2F6 /* CartVC.swift */,
+				E25C371129CF25140002F729 /* Address */,
 				E2776B7A29C7728F001173E7 /* cells */,
 			);
 			path = Cart;
@@ -545,6 +562,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E25C371529CF30F80002F729 /* AddressModel.swift in Sources */,
 				E28D75FF29C87A39007D07F9 /* AllCategoriesVC.swift in Sources */,
 				E2776B8329C772D3001173E7 /* addressCollectionViewCell.swift in Sources */,
 				E2A9FF2529C5F97600FCD2F6 /* ContainerVC.swift in Sources */,
@@ -556,6 +574,7 @@
 				E260641329CA0811005BFFCD /* CategoriesApi.swift in Sources */,
 				E23CE46A29C4DB6A00B29873 /* ForgetPasswordVC.swift in Sources */,
 				E29EBA8229CB826200A74C42 /* WishlistApi.swift in Sources */,
+				E25C371729CF31990002F729 /* AddressApi.swift in Sources */,
 				E23CE46E29C4E82A00B29873 /* SetNewPasswordVC.swift in Sources */,
 				E2A9FF2929C5FDEA00FCD2F6 /* HomeVC.swift in Sources */,
 				E2A9FF3B29C6106400FCD2F6 /* allProductsCollectioViewCell.swift in Sources */,
@@ -567,6 +586,7 @@
 				E2E6918929BBEF4000E7B002 /* extentsions.swift in Sources */,
 				E2E6918B29BBF12A00E7B002 /* OnboardingVC.swift in Sources */,
 				E29EBA7729CB26D100A74C42 /* ProductDetailsModel.swift in Sources */,
+				E25C371329CF253E0002F729 /* AddressVC.swift in Sources */,
 				E2A9FF2D29C5FE0400FCD2F6 /* CartVC.swift in Sources */,
 				E2E6917529BBEB6A00E7B002 /* LazaApp.xcdatamodeld in Sources */,
 				E232514629CDD1F8005C588E /* DeleteFromCartModel.swift in Sources */,

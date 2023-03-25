@@ -48,6 +48,7 @@ class ProfileVC: UIViewController{
         profileImageFrame.layer.borderColor = UIColor(named: "BackGrpundColor")?.cgColor
         profileImageFrame.layer.borderWidth = 4
         profileImageFrame.layer.cornerRadius = profileImageFrame.bounds.height / 2
+        userProfileImage.layer.cornerRadius = userProfileImage.bounds.height / 2
         profileApi.delegate = self
         profileApi.getUserProfileData() 
     }

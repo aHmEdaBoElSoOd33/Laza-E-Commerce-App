@@ -33,11 +33,19 @@ class AllCategoriesVC: UIViewController {
     
     func getCategoriesDataFromApi(){
          
-        categoriesApi.getCategories { data in
-            self.categriesArray = data
-            self.categoriesCollectionView.reloadData()
+        categoriesApi.getCategories { data,error  in
             self.indicatorView?.stopAnimating()
             self.view.isUserInteractionEnabled = true
+           
+            if let data = data{
+                self.categriesArray = data
+                self.categoriesCollectionView.reloadData()
+           
+            }else if let error = error {
+                self.showALert(message: error.localizedDescription)
+            }
+            
+            
         }
     }
     
