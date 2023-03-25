@@ -62,7 +62,6 @@ extension UIViewController{
      
     
     func showALert(message:String){
-        
         let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .cancel)
         alert.addAction(action)
@@ -101,7 +100,20 @@ extension UIViewController{
         present(alertController, animated: true, completion: nil)
     }
     
-    
+    func showAlertDeleteAddress(massege : String ) {
+        
+        let alertController = UIAlertController(title: "Alert", message: massege, preferredStyle: .alert)
+
+        let defaultAction = UIAlertAction(title: "OK", style: .default) { _ in
+            let vc = self.storyboard?.instantiateViewController(identifier: CartVC.ID) as! CartVC
+            vc.modalTransitionStyle = .crossDissolve
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated: true)
+        }
+        alertController.addAction(defaultAction)
+
+        present(alertController, animated: true, completion: nil)
+    }
     
     
      func activityIndicator(style: UIActivityIndicatorView.Style = .medium,

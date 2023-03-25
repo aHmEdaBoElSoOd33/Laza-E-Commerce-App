@@ -28,6 +28,7 @@
 		E2776B7E29C772B0001173E7 /* cartCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2776B7C29C772B0001173E7 /* cartCollectionViewCell.xib */; };
 		E2776B8329C772D3001173E7 /* addressCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2776B8129C772D3001173E7 /* addressCollectionViewCell.swift */; };
 		E2776B8429C772D3001173E7 /* addressCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2776B8229C772D3001173E7 /* addressCollectionViewCell.xib */; };
+		E27E4E1729CF7C2C001C0F25 /* AddUpdateDeleteAdreessModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27E4E1629CF7C2B001C0F25 /* AddUpdateDeleteAdreessModel.swift */; };
 		E28D75FF29C87A39007D07F9 /* AllCategoriesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28D75FE29C87A39007D07F9 /* AllCategoriesVC.swift */; };
 		E28D760129C87BF5007D07F9 /* ShowAllCateroriesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28D760029C87BF5007D07F9 /* ShowAllCateroriesCollectionViewCell.swift */; };
 		E28D760329C87FEE007D07F9 /* CategoriesDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28D760229C87FEE007D07F9 /* CategoriesDetailsVC.swift */; };
@@ -87,6 +88,7 @@
 		E2776B7C29C772B0001173E7 /* cartCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = cartCollectionViewCell.xib; sourceTree = "<group>"; };
 		E2776B8129C772D3001173E7 /* addressCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addressCollectionViewCell.swift; sourceTree = "<group>"; };
 		E2776B8229C772D3001173E7 /* addressCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = addressCollectionViewCell.xib; sourceTree = "<group>"; };
+		E27E4E1629CF7C2B001C0F25 /* AddUpdateDeleteAdreessModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUpdateDeleteAdreessModel.swift; sourceTree = "<group>"; };
 		E28D75FE29C87A39007D07F9 /* AllCategoriesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCategoriesVC.swift; sourceTree = "<group>"; };
 		E28D760029C87BF5007D07F9 /* ShowAllCateroriesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowAllCateroriesCollectionViewCell.swift; sourceTree = "<group>"; };
 		E28D760229C87FEE007D07F9 /* CategoriesDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesDetailsVC.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 				E25289FC29CD11F40010FAE8 /* AddToCartModel.swift */,
 				E232514529CDD1F8005C588E /* DeleteFromCartModel.swift */,
 				E25C371429CF30F80002F729 /* AddressModel.swift */,
+				E27E4E1629CF7C2B001C0F25 /* AddUpdateDeleteAdreessModel.swift */,
 			);
 			path = Cart;
 			sourceTree = "<group>";
@@ -305,7 +308,7 @@
 				E2A9FF1E29C5F8DE00FCD2F6 /* Home */,
 				E2A9FF1F29C5F8EA00FCD2F6 /* Wishlist */,
 				E2A9FF2029C5F8F700FCD2F6 /* Cart */,
-				E2A9FF2129C5F8FE00FCD2F6 /* Wallets */,
+				E2A9FF2129C5F8FE00FCD2F6 /* Profile */,
 			);
 			path = TabBarControllers;
 			sourceTree = "<group>";
@@ -313,8 +316,8 @@
 		E2A9FF1E29C5F8DE00FCD2F6 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				E29EBA7D29CB2BAA00A74C42 /* Product Details */,
 				E29EBA7C29CB2B9B00A74C42 /* Main */,
+				E29EBA7D29CB2BAA00A74C42 /* Product Details */,
 				E2A9FF3029C60FBF00FCD2F6 /* cells */,
 			);
 			path = Home;
@@ -338,12 +341,12 @@
 			path = Cart;
 			sourceTree = "<group>";
 		};
-		E2A9FF2129C5F8FE00FCD2F6 /* Wallets */ = {
+		E2A9FF2129C5F8FE00FCD2F6 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
 				E2A9FF2E29C5FE1200FCD2F6 /* ProfileVC.swift */,
 			);
-			path = Wallets;
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		E2A9FF3029C60FBF00FCD2F6 /* cells */ = {
@@ -589,6 +592,7 @@
 				E25C371329CF253E0002F729 /* AddressVC.swift in Sources */,
 				E2A9FF2D29C5FE0400FCD2F6 /* CartVC.swift in Sources */,
 				E2E6917529BBEB6A00E7B002 /* LazaApp.xcdatamodeld in Sources */,
+				E27E4E1729CF7C2C001C0F25 /* AddUpdateDeleteAdreessModel.swift in Sources */,
 				E232514629CDD1F8005C588E /* DeleteFromCartModel.swift in Sources */,
 				E2A9FF2B29C5FDF900FCD2F6 /* WishlistVC.swift in Sources */,
 				E260641929CA3278005BFFCD /* categoriesDetailsModel.swift in Sources */,

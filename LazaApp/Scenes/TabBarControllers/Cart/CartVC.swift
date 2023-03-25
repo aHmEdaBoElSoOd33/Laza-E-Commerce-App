@@ -184,6 +184,7 @@ extension CartVC : UICollectionViewDelegate , UICollectionViewDataSource , UICol
         case addressCollectionView:
             let vc = storyboard?.instantiateViewController(withIdentifier: AddressVC.ID) as! AddressVC
             vc.state = "update"
+            vc.address = addressArray[indexPath.row]
             vc.modalTransitionStyle = .crossDissolve
             vc.modalPresentationStyle = .fullScreen
             present(vc, animated: true)

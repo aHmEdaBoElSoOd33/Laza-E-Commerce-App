@@ -30,7 +30,7 @@ class LoginAndRegerterVC: UIViewController  {
     static let ID = String(describing: LoginAndRegerterVC.self)
     var state : String = ""
     var api = RegisterApi()
-    
+    var showPasswordBTnState = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -153,7 +153,23 @@ class LoginAndRegerterVC: UIViewController  {
         
     }
     
- 
+    @IBAction func showPasswordBtn(_ sender: UIButton) {
+        if showPasswordBTnState {
+            
+            showPasswordBTnState = false
+            sender.setImage(UIImage(named: "Eye Icon"), for: .normal)
+            passwordTxtField.isSecureTextEntry = false
+        }else{
+            showPasswordBTnState = true
+            sender.setImage(UIImage(named: "Eye Icon copy"), for: .normal)
+            passwordTxtField.isSecureTextEntry = true
+            
+        }
+        
+        
+        
+    }
+    
 }
 
 
@@ -185,4 +201,5 @@ extension LoginAndRegerterVC : RegisterApiDelegate {
     func RegisterIsFail(message : String) {
         showALert(message: message)
     }
+    
 }
