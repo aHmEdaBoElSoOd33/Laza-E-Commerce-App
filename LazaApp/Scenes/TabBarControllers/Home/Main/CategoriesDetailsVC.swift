@@ -83,6 +83,15 @@ extension CategoriesDetailsVC : UICollectionViewDelegate , UICollectionViewDataS
     func buttonTapped(cell: allProductsCollectioViewCell) {
         guard let indexPath = self.categoriesProductsCollectionView.indexPath(for: cell) else { return }
         
+        if cell.favBtn.tintColor == .lightGray {
+            cell.favBtn.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+            cell.favBtn.tintColor = .red
+        }else{
+            cell.favBtn.setImage(UIImage(systemName: "heart"), for: .normal)
+            cell.favBtn.tintColor = .lightGray
+        }
+        self.view.isUserInteractionEnabled = false
+        
         wishlistApi.addproductToFavoriets(id: categoryProuductsArray[indexPath.row].id!)
           
         print("Button tapped on row \(indexPath.row)")
@@ -91,10 +100,12 @@ extension CategoriesDetailsVC : UICollectionViewDelegate , UICollectionViewDataS
     
     func isDone(message: String) {
         showALert(message: message)
+        self.view.isUserInteractionEnabled = true
     }
     
     func isFail(message: String) {
         showALert(message: message)
+        self.view.isUserInteractionEnabled = true
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

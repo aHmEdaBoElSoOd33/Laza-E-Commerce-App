@@ -28,8 +28,10 @@ class CartVC: UIViewController {
     var cartArray : [CartItem] = []
     var addressArray : [AddressDetailsData] = []
     var indicatorView : UIActivityIndicatorView?
+    var AddressindicatorView : UIActivityIndicatorView?
     var addressApi  = AddressApi()
-    
+    var orderApi = OrdersApi()
+    var shippingCost = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -40,6 +42,8 @@ class CartVC: UIViewController {
         getCartDataFromApi()
         getAddressDatFromApi()
         cartApi.delegate = self
+        orderApi.delegate = self
+        self.addressCollectionView.reloadData()
     }
     
     //MARK: - Functions
@@ -47,6 +51,8 @@ class CartVC: UIViewController {
     func uiSetUp(){
         indicatorView = self.activityIndicator(style: .large,
                                                center: self.view.center)
+        AddressindicatorView = self.activityIndicator(style: .large,  center: self.view.center)
+        self.view.addSubview(indicatorView!)
         self.view.addSubview(indicatorView!)
         cartCollectionView.delegate = self
         cartCollectionView.dataSource = self
@@ -54,18 +60,19 @@ class CartVC: UIViewController {
         addressCollectionView.delegate = self
         setupCell(collectionView: cartCollectionView, ID: cartCollectionViewCell.ID)
         setupCell(collectionView: addressCollectionView, ID: addressCollectionViewCell.ID)
-        
         self.view.isUserInteractionEnabled = false
         self.indicatorView!.startAnimating()
+        
     }
     
     
     func getCartDataFromApi(){
+        
         cartApi.getCartProducts { data,subdata  in
             self.cartArray = data!
             self.subtotalCostLbl.text = "\((subdata?.sub_total)!)$"
-            self.shippingCostLbl.text = "10$"
-            self.totalCostLbl.text = "\((subdata?.total)! + 10)$"
+            self.shippingCostLbl.text = "$"
+            self.totalCostLbl.text = "\((subdata?.total)!)$"
             self.cartCollectionView.reloadData()
             self.view.isUserInteractionEnabled = true
             self.indicatorView!.stopAnimating()
@@ -77,6 +84,8 @@ class CartVC: UIViewController {
         addressApi.getAddressData { data in
             self.addressArray = data
             self.addressCollectionView.reloadData()
+            self.view.isUserInteractionEnabled = true
+            self.indicatorView!.stopAnimating()
         }
     }
     
@@ -85,6 +94,19 @@ class CartVC: UIViewController {
     @IBAction func backBtn(_ sender: Any) {
         tabBarNavigation(pageindex: 0)
     }
+    
+    
+    @IBAction func AddOrderBtn(_ sender: UIButton) {
+        print("id")
+        if addressArray.isEmpty{
+            showALert(message: "Add Address")
+        }else if cartArray.isEmpty{
+           showALert(message: "Cart is empty add products")
+        }else{
+            orderApi.AddOrder(address_id: String(addressArray[0].id!), promo_code_id: nil)
+        }
+    }
+    
     
     
     @IBAction func addAddressBtn(_ sender: Any) {
@@ -101,7 +123,17 @@ class CartVC: UIViewController {
 
 
 
-extension CartVC : UICollectionViewDelegate , UICollectionViewDataSource , UICollectionViewDelegateFlowLayout , CellSubclassCartDelegate, CartApiDelegate{
+extension CartVC : UICollectionViewDelegate , UICollectionViewDataSource , UICollectionViewDelegateFlowLayout , CellSubclassCartDelegate, CartApiDelegate , AddOrderDelegate{
+    
+    
+    func AddorderIsDone(message: String) {
+        showALert(message: message)
+    }
+    
+    func AddorderIsFail(message: String) {
+        showALert(message: message)
+    }
+    
     func isDone(message: String) {
         showALert(message: message)
         uiSetUp()
@@ -118,7 +150,6 @@ extension CartVC : UICollectionViewDelegate , UICollectionViewDataSource , UICol
         guard let indexPath = self.cartCollectionView.indexPath(for: cell) else { return }
         
         cartApi.addOrRemoveproductFromCart(id: (cartArray[indexPath.row].product?.id)!)
-        
         print("Tapped")
     }
     
@@ -140,7 +171,6 @@ extension CartVC : UICollectionViewDelegate , UICollectionViewDataSource , UICol
             cell.layer.shadowOpacity = 0.1
             cell.layer.shadowOffset = CGSize(width: 0, height: 5)
             cell.layer.shadowRadius = 5
-            
             cell.delegate = self
             cell.productName.text = cartArray[indexPath.row].product?.name
             cell.productImage.kf.setImage(with: URL(string: (cartArray[indexPath.row].product?.image)!))
@@ -148,9 +178,8 @@ extension CartVC : UICollectionViewDelegate , UICollectionViewDataSource , UICol
             return cell
         default:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: addressCollectionViewCell.ID, for: indexPath) as! addressCollectionViewCell
-            
-            cell.AddressNameLbl.text = addressArray[indexPath.row].name! + "," + addressArray[indexPath.row].city!
-            cell.countryLbl.text = addressArray[indexPath.row].region
+            cell.AddressNameLbl.text = addressArray[indexPath.row].name! + "," + addressArray[indexPath.row].region!
+            cell.countryLbl.text = addressArray[indexPath.row].city
             return cell
         }
         
@@ -189,7 +218,7 @@ extension CartVC : UICollectionViewDelegate , UICollectionViewDataSource , UICol
             vc.modalPresentationStyle = .fullScreen
             present(vc, animated: true)
         default:
-            break
+           break
         }
     }
     
@@ -206,7 +235,6 @@ extension CartVC : UICollectionViewDelegate , UICollectionViewDataSource , UICol
             }
             else
             {
-                
                 let noDataLabel: UILabel  = UILabel(frame: CGRect(x: 0, y: 0, width: collectionView.bounds.size.width, height: collectionView.bounds.size.height))
                 noDataLabel.text = "No items in cart yet"
                 noDataLabel.font = .boldSystemFont(ofSize: 20)
@@ -217,7 +245,24 @@ extension CartVC : UICollectionViewDelegate , UICollectionViewDataSource , UICol
             }
             return numOfSections
         default:
-            return 1
+            if addressArray.count != 0
+            {
+                //collectionView.separatorStyle = .singleLine
+                numOfSections            = 1
+                collectionView.backgroundView = nil
+            }
+            else
+            {
+                
+                let noDataLabel: UILabel  = UILabel(frame: CGRect(x: 0, y: 0, width: collectionView.bounds.size.width, height: collectionView.bounds.size.height))
+                noDataLabel.text = "There are no Addresses , Add one!"
+                noDataLabel.font = .boldSystemFont(ofSize: 15)
+                noDataLabel.textColor     = UIColor.lightGray
+                noDataLabel.textAlignment = .center
+                collectionView.backgroundView  = noDataLabel
+                //collectionView.separatorStyle  = .none
+            }
+            return numOfSections
         }
         
     }

@@ -162,7 +162,7 @@ class AddressVC: UIViewController{
 
 extension AddressVC : CLLocationManagerDelegate, AddressApiDelegate {
     func deleteAddressIsDone(message: String) {
-        showALert(message: message)
+        showAlertDeleteAddress(massege: message)
     }
     
     func deleteAddressIsFail(message: String) {
@@ -202,6 +202,7 @@ extension AddressVC : CLLocationManagerDelegate, AddressApiDelegate {
         longtiude = coord.longitude 
         print(coord.latitude)
         print(coord.longitude)
+        showALert(message: "Coordinates Added")
     }
     
 }

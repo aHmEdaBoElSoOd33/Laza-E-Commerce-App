@@ -14,7 +14,9 @@ class addressCollectionViewCell: UICollectionViewCell {
      
     override func awakeFromNib() {
         super.awakeFromNib()
-         
+        
+        
+        
     }
 
     @IBAction func addressChekerBtn(_ sender: UIButton) {
@@ -27,4 +29,8 @@ class addressCollectionViewCell: UICollectionViewCell {
         }
         
     }
+    
+    
+    
+    
 }

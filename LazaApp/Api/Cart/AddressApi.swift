@@ -63,10 +63,7 @@ class AddressApi{
             }else{
                 print("Not 200")
             }
-        }
-        
-        
-        
+        } 
         
     }
     

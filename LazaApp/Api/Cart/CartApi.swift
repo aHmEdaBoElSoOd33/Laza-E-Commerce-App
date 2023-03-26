@@ -70,14 +70,7 @@ class CartApi{
         let addToCartUrl = RegisterApi.BASE_URL + "carts/\(id)"
         let header = HTTPHeaders(["lang":"en","Authorization":token!])
         let params = ["quantity":quantity]
-        
-        
-        
-        
-        
-        
-        
-        
+         
         
     }
     

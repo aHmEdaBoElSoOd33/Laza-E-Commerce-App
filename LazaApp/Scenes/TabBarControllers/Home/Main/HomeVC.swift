@@ -85,7 +85,7 @@ class HomeVC: UIViewController {
             if let data = data {
                 self.newArrivalArray = data
                 self.newArraivalCollectionView.reloadData()
-                self.getNumberOfOrdersSideMenu()
+                self.getNumberOfItemsINCartSideMenu()
                 
             }else if let error = error {
                 
@@ -118,14 +118,12 @@ class HomeVC: UIViewController {
         userProfileImage.kf.setImage(with: URL(string: userdata.image!))
     }
     
-    func getNumberOfOrdersSideMenu(){
+    func getNumberOfItemsINCartSideMenu(){
         cartApi.getCartProducts { data, subdata in
             
-            if data!.count <= 1{
-                self.numberOfOrders.text = "\((data?.count)!) Order"
-            }else{
-                self.numberOfOrders.text = "\((data?.count)!) Orders"
-            }
+            
+            self.numberOfOrders.text = "\((data?.count)!) In Cart"
+            
         }
     }
     
@@ -210,7 +208,6 @@ class HomeVC: UIViewController {
         }
     }
     
-    
     @IBAction func cartBtn(_ sender: Any) {
         tabBarNavigation(pageindex: 2)
     }
@@ -223,24 +220,18 @@ class HomeVC: UIViewController {
     //MARK: - Side Menu
     
     @IBAction func accountInfoBtn(_ sender: Any) {
-    }
-    
-    @IBAction func passwordSettingsBtn(_ sender: Any) {
-        
+        tabBarNavigation(pageindex: 3)
     }
     @IBAction func ordersBtn(_ sender: Any) {
-        
-    }
-    
-    @IBAction func myCardsBtn(_ sender: Any) {
-        
+        let vc = storyboard?.instantiateViewController(withIdentifier: OrdersVC.ID ) as! OrdersVC
+        vc.modalPresentationStyle = .fullScreen
+        vc.modalTransitionStyle = .crossDissolve
+        present(vc, animated: true)
     }
     @IBAction func wishListBtn(_ sender: Any) {
-        
+        tabBarNavigation(pageindex: 1)
     }
-    @IBAction func settengsBtn(_ sender: Any) {
-        
-    }
+    
     @IBAction func logoutBtn(_ sender: Any) {
         //        let loginManager = LoginManager()
         //           loginManager.logOut()
@@ -267,17 +258,16 @@ class HomeVC: UIViewController {
 extension HomeVC : UICollectionViewDelegate , UICollectionViewDelegateFlowLayout , UICollectionViewDataSource , HomeApiDelegate , CellSubclassProductDelegate , WishlistApiDelegate {
     func isDone(message: String) {
         showALert(message: message)
+        self.view.isUserInteractionEnabled = true
     }
     
     func isFail(message: String) {
         showALert(message: message)
+        self.view.isUserInteractionEnabled = true
     }
     
     func buttonTapped(cell: allProductsCollectioViewCell) {
         guard let indexPath = self.newArraivalCollectionView.indexPath(for: cell) else { return }
-        
-        wishlistApi.addproductToFavoriets(id: newArrivalArray[indexPath.row].id!)
-        
         
         if cell.favBtn.tintColor == .lightGray {
             cell.favBtn.setImage(UIImage(systemName: "heart.fill"), for: .normal)
@@ -287,9 +277,12 @@ extension HomeVC : UICollectionViewDelegate , UICollectionViewDelegateFlowLayout
             cell.favBtn.tintColor = .lightGray
             
         }
-        
-        
+        self.view.isUserInteractionEnabled = false
         print("Button tapped on row \(indexPath.row)")
+        
+        wishlistApi.addproductToFavoriets(id: newArrivalArray[indexPath.row].id!)
+        
+       
         
     }
     
@@ -332,7 +325,7 @@ extension HomeVC : UICollectionViewDelegate , UICollectionViewDelegateFlowLayout
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: allProductsCollectioViewCell.ID, for: indexPath) as! allProductsCollectioViewCell
             cell.delegate = self
             cell.favBtn.tintColor = .lightGray
-             
+            
             if newArrivalArray[indexPath.row].in_favorites! {
                 cell.favBtn.setImage(UIImage(systemName:  "heart.fill"), for: .normal)
                 cell.favBtn.tintColor = .red

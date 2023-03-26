@@ -22,7 +22,7 @@ import Foundation
     // MARK: - Product
     struct Product: Decodable {
         let id: Int?
-        let price, oldPrice: Double?
+        let price, oldPrice: Float?
         let discount: Int?
         let image: String?
         let name, description: String?
