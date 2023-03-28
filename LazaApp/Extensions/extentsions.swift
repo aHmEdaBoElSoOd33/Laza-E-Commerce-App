@@ -16,8 +16,7 @@ extension UIView{
         }
         set{
             self.layer.cornerRadius = newValue
-        }
-        
+        } 
     }
     
 }
@@ -55,7 +54,7 @@ extension UITextField {
             return false
         } set {
             let underLineLayer = CALayer()
-            underLineLayer.frame = CGRect(x: 0, y: self.frame.height + 5, width: self.frame.width - 20 , height: 1.0)
+            underLineLayer.frame = CGRect(x: 0, y: self.frame.height + 5, width: self.frame.width  , height: 1.0)
             underLineLayer.backgroundColor = UIColor.placeholderText.cgColor
             self.borderStyle = .none
             self.layer.addSublayer(underLineLayer) 

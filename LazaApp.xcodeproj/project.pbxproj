@@ -24,6 +24,7 @@
 		E25289F929CCA3E40010FAE8 /* CartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25289F829CCA3E40010FAE8 /* CartModel.swift */; };
 		E25289FB29CCA3F30010FAE8 /* CartApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25289FA29CCA3F30010FAE8 /* CartApi.swift */; };
 		E25289FD29CD11F40010FAE8 /* AddToCartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25289FC29CD11F40010FAE8 /* AddToCartModel.swift */; };
+		E254260829D315CF002C12C4 /* GoogleMapsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E254260729D315CF002C12C4 /* GoogleMapsVC.swift */; };
 		E25C371329CF253E0002F729 /* AddressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25C371229CF253E0002F729 /* AddressVC.swift */; };
 		E25C371529CF30F80002F729 /* AddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25C371429CF30F80002F729 /* AddressModel.swift */; };
 		E25C371729CF31990002F729 /* AddressApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25C371629CF31990002F729 /* AddressApi.swift */; };
@@ -92,6 +93,7 @@
 		E25289F829CCA3E40010FAE8 /* CartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartModel.swift; sourceTree = "<group>"; };
 		E25289FA29CCA3F30010FAE8 /* CartApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartApi.swift; sourceTree = "<group>"; };
 		E25289FC29CD11F40010FAE8 /* AddToCartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToCartModel.swift; sourceTree = "<group>"; };
+		E254260729D315CF002C12C4 /* GoogleMapsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsVC.swift; sourceTree = "<group>"; };
 		E25C371229CF253E0002F729 /* AddressVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressVC.swift; sourceTree = "<group>"; };
 		E25C371429CF30F80002F729 /* AddressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressModel.swift; sourceTree = "<group>"; };
 		E25C371629CF31990002F729 /* AddressApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressApi.swift; sourceTree = "<group>"; };
@@ -381,6 +383,7 @@
 			isa = PBXGroup;
 			children = (
 				E2A9FF2C29C5FE0400FCD2F6 /* CartVC.swift */,
+				E254260729D315CF002C12C4 /* GoogleMapsVC.swift */,
 				E25C371129CF25140002F729 /* Address */,
 				E2776B7A29C7728F001173E7 /* cells */,
 			);
@@ -505,6 +508,7 @@
 				E2E6916429BBEB6A00E7B002 /* Frameworks */,
 				E2E6916529BBEB6A00E7B002 /* Resources */,
 				46155A41D1E247B93D35840B /* [CP] Embed Pods Frameworks */,
+				B059DB881864AA97952DC778 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -606,6 +610,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		B059DB881864AA97952DC778 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LazaApp/Pods-LazaApp-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LazaApp/Pods-LazaApp-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LazaApp/Pods-LazaApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -628,6 +649,7 @@
 				E227E50329D0D1D100762E51 /* CancelOrderModel.swift in Sources */,
 				E260641329CA0811005BFFCD /* CategoriesApi.swift in Sources */,
 				E23CE46A29C4DB6A00B29873 /* ForgetPasswordVC.swift in Sources */,
+				E254260829D315CF002C12C4 /* GoogleMapsVC.swift in Sources */,
 				E29EBA8229CB826200A74C42 /* WishlistApi.swift in Sources */,
 				E25C371729CF31990002F729 /* AddressApi.swift in Sources */,
 				E23CE46E29C4E82A00B29873 /* SetNewPasswordVC.swift in Sources */,

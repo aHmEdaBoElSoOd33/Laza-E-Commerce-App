@@ -71,15 +71,27 @@
                                     <constraint firstAttribute="height" constant="15" id="x6C-92-EOk"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hYh-fB-JSr">
+                                <rect key="frame" x="0.0" y="25" width="50" height="50"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title=""/>
+                                <connections>
+                                    <action selector="showLocationOnMaps:" destination="gTV-IL-0wX" eventType="touchUpInside" id="7bT-bB-IM3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="fUs-Fw-hNv" firstAttribute="width" secondItem="fUs-Fw-hNv" secondAttribute="height" multiplier="1:1" id="1hy-YT-qOv"/>
+                            <constraint firstItem="hYh-fB-JSr" firstAttribute="height" secondItem="hHp-CN-pFG" secondAttribute="height" id="38T-aN-hOW"/>
+                            <constraint firstItem="hYh-fB-JSr" firstAttribute="leading" secondItem="hHp-CN-pFG" secondAttribute="leading" id="4rU-PV-Ev3"/>
                             <constraint firstItem="fUs-Fw-hNv" firstAttribute="centerX" secondItem="Vof-Pq-rBc" secondAttribute="centerX" id="4ts-ai-379"/>
                             <constraint firstItem="Vof-Pq-rBc" firstAttribute="centerY" secondItem="hHp-CN-pFG" secondAttribute="centerY" id="6ye-F7-Iop"/>
                             <constraint firstItem="VIf-wf-BWX" firstAttribute="centerY" secondItem="kZR-CB-de9" secondAttribute="centerY" id="7EF-OI-Ody"/>
                             <constraint firstItem="hHp-CN-pFG" firstAttribute="centerY" secondItem="kZR-CB-de9" secondAttribute="centerY" id="7Qe-sg-hyG"/>
                             <constraint firstItem="hHp-CN-pFG" firstAttribute="leading" secondItem="kZR-CB-de9" secondAttribute="leading" id="9b5-lD-CVF"/>
+                            <constraint firstItem="hYh-fB-JSr" firstAttribute="trailing" secondItem="hHp-CN-pFG" secondAttribute="trailing" id="EnB-PT-9Pw"/>
+                            <constraint firstItem="hYh-fB-JSr" firstAttribute="top" secondItem="hHp-CN-pFG" secondAttribute="top" id="LQQ-xD-hmv"/>
                             <constraint firstItem="q7y-UM-9fh" firstAttribute="top" secondItem="hHp-CN-pFG" secondAttribute="top" id="NYw-7f-gon"/>
                             <constraint firstItem="Vof-Pq-rBc" firstAttribute="centerX" secondItem="hHp-CN-pFG" secondAttribute="centerX" id="OQQ-vE-rbZ"/>
                             <constraint firstItem="Xuo-tr-oVB" firstAttribute="bottom" secondItem="hHp-CN-pFG" secondAttribute="bottom" constant="-10" id="SQn-pv-UdM"/>

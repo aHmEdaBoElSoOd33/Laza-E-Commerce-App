@@ -13,5 +13,6 @@ pod 'Firebase/Auth'
 pod 'GoogleSignIn'
 pod 'Kingfisher'
 pod 'Alamofire'
-
+pod 'GoogleMaps'
+pod 'IQKeyboardManagerSwift'
 end

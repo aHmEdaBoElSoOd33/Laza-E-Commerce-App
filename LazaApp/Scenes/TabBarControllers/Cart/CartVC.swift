@@ -123,7 +123,20 @@ class CartVC: UIViewController {
 
 
 
-extension CartVC : UICollectionViewDelegate , UICollectionViewDataSource , UICollectionViewDelegateFlowLayout , CellSubclassCartDelegate, CartApiDelegate , AddOrderDelegate{
+extension CartVC : UICollectionViewDelegate , UICollectionViewDataSource , UICollectionViewDelegateFlowLayout , CellSubclassCartDelegate, CartApiDelegate , AddOrderDelegate , CellSubclassAddressDelegate{
+    
+    
+    func buttonTapped(cell: addressCollectionViewCell) {
+        guard let indexPath = self.addressCollectionView.indexPath(for: cell) else { return }
+        let vc = storyboard?.instantiateViewController(withIdentifier: GoogleMapsVC.ID) as! GoogleMapsVC
+        
+        vc.latitude = Double(addressArray[indexPath.row].latitude!)
+        vc.longtude = Double(addressArray[indexPath.row].longitude!)
+        vc.modalTransitionStyle = .coverVertical
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
+    }
+    
     
     
     func AddorderIsDone(message: String) {
@@ -147,8 +160,7 @@ extension CartVC : UICollectionViewDelegate , UICollectionViewDataSource , UICol
     }
     
     func buttonTapped(cell: cartCollectionViewCell) {
-        guard let indexPath = self.cartCollectionView.indexPath(for: cell) else { return }
-        
+        guard let indexPath = self.cartCollectionView.indexPath(for: cell) else { return } 
         cartApi.addOrRemoveproductFromCart(id: (cartArray[indexPath.row].product?.id)!)
         print("Tapped")
     }
@@ -178,6 +190,7 @@ extension CartVC : UICollectionViewDelegate , UICollectionViewDataSource , UICol
             return cell
         default:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: addressCollectionViewCell.ID, for: indexPath) as! addressCollectionViewCell
+            cell.delegate = self
             cell.AddressNameLbl.text = addressArray[indexPath.row].name! + "," + addressArray[indexPath.row].region!
             cell.countryLbl.text = addressArray[indexPath.row].city
             return cell

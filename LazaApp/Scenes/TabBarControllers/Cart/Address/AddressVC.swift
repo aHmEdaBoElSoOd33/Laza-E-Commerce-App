@@ -33,12 +33,11 @@ class AddressVC: UIViewController{
         addressApi.delegate = self
         locationManager.delegate = self
         uiSetUp()
-        
+        hideKeyboardWhenTappedAround()
     }
     
 
     func uiSetUp(){
-          
         if state == "add"{
             addCoordinatorsBtn.isHidden = false
             addCoordinatorsBtn.layer.borderWidth = 1
@@ -125,6 +124,8 @@ class AddressVC: UIViewController{
     
     
     @IBAction func saveAddress(_ sender: UIButton) {
+        print(latitude)
+        print(longtiude)
         
         if sender.titleLabel?.text == "Save Address"{
             validateAddAddress()

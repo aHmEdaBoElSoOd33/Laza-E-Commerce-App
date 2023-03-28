@@ -7,16 +7,22 @@
 
 import UIKit
 
+protocol CellSubclassAddressDelegate {
+    func buttonTapped(cell: addressCollectionViewCell)
+}
+
+
 class addressCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var countryLbl: UILabel! 
     @IBOutlet weak var AddressNameLbl: UILabel!
+    
+    
     static let ID = String(describing: addressCollectionViewCell.self)
-     
+    var delegate : CellSubclassAddressDelegate?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        
-        
+        self.delegate = nil
     }
 
     @IBAction func addressChekerBtn(_ sender: UIButton) {
@@ -31,6 +37,11 @@ class addressCollectionViewCell: UICollectionViewCell {
     }
     
     
+    @IBAction func showLocationOnMaps(_ sender: Any) {
+        print("hello")
+        delegate?.buttonTapped(cell: self)
+        
+    }
     
     
 }

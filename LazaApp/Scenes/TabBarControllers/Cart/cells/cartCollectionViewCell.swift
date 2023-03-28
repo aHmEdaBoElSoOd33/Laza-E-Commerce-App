@@ -57,15 +57,6 @@ class cartCollectionViewCell: UICollectionViewCell {
                     countOfProducts.text = String(Int(countOfProducts.text!)! - 1)
                 }
         }
-        
-        
-        
-        
-        
-        
-        
     }
-    
-    
     
 }
